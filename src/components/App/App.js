@@ -1,11 +1,22 @@
+//Imports
 import React from "react";
 import "./App.css";
+import { Switch, Route, Redirect } from 'react-router-dom';
+import HomePage from '../HomePage/HomePage'
+
 
 const App = () => {
+	
+	
 	return (
-		<div className="App">
+		<main className="App">
 			<header className="App-header"></header>
-		</div>
+		<Switch>
+			<Route exact path = '/' render = {() => 
+			<HomePage/>
+			}/>
+		</Switch>
+		</main>
 	);
 };
 
