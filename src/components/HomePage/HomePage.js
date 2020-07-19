@@ -18,16 +18,16 @@ return (
     <section className ="home-page-container">
         <h1>Search for Senators and Representatives</h1>
         <form className ="search-container">
-        <select id="search-params" name="search-options">
-            <option  defaultValue  >
+        <select className="search-params" id="search-params" name="search-options">
+            <option className="search-option" defaultValue  >
             -- select an option --
             </option>
-            <option value="name">Name</option>
-            <option value="state">State</option>
-            <option value="zip">Zip</option>
+            <option className="search-option" value="name">Name</option>
+            <option className="search-option" value="state">State</option>
+            <option className="search-option" value="zip">Zip</option>
             <option value="committee">Committee</option>
         </select>
-        <input type= 'text' placeholder="Search"></input>
+        <input className="search-input" type= 'text' placeholder="Search"></input>
         <button type="submit" className="search-btn">Search</button>
 
         </form>
