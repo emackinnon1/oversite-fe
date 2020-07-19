@@ -1,13 +1,15 @@
 nav {
     display: flex;
     justify-content: flex-start;
-    height: 5em;
+    height: 4.8vw;
 }
 
 .nav-link {
     margin-right: .2em;
+    text-align: center;
     background-color: grey;
     color: white;
     padding: 1em;
-    font-size: 1.7em;
+    font-size: 1.4vw;
+    width: 16%;
 }
