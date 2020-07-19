@@ -1,0 +1,13 @@
+nav {
+    display: flex;
+    justify-content: flex-start;
+    height: 5em;
+}
+
+.nav-link {
+    margin-right: .2em;
+    background-color: grey;
+    color: white;
+    padding: 1em;
+    font-size: 1.7em;
+}
