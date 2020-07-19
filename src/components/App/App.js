@@ -2,8 +2,10 @@
 import React from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from 'react-router-dom';
-import HomePage from '../HomePage/HomePage'
 
+//Component Imports
+import HomePage from '../HomePage/HomePage'
+import NavBar from '../Navbar/Navbar'
 
 const App = () => {
 	
@@ -11,6 +13,7 @@ const App = () => {
 	return (
 		<main className="App">
 			<header className="App-header"></header>
+			<NavBar/>
 		<Switch>
 			<Route exact path = '/' render = {() => 
 			<HomePage/>
