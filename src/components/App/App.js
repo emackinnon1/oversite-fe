@@ -17,9 +17,12 @@ const App = () => {
 			<header className="App-header"></header>
 			<NavBar/>
 		<Switch>
-			<Route exact path = '/' render = {() => 
-			<HomePage/>
-			}/>
+			<Route 
+				exact path = '/' 
+				render = {() => <HomePage/>}/>
+			<Route 
+				path = '/results' 
+				render ={() => <ResultPage/> }/>
 		</Switch>
 		</main>
 	);
