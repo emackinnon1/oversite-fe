@@ -1,0 +1,33 @@
+.home-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: solid red 1px;
+}
+
+.search-container {
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px red;
+    height: auto;
+    width: auto;
+}
+
+select,
+input {
+    margin: 1em;
+    height: 2em;
+
+}
+
+
+
+.search-btn {
+    width: 20%;
+    height: 2em;
+}
+
