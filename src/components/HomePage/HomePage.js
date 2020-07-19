@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 
 //App Imports
-import routes from '../setup/routes'
 import './HomePage.css'
 
 
