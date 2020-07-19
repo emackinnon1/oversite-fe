@@ -1,4 +1,4 @@
-.results {
+.all-reps {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -6,7 +6,8 @@
 	width: 50%;
 }
 
-.filter {
-	display: flex;
-	flex-direction: column;
+.all-reps-container {
+	overflow: scroll;
+	height: 75vh;
+	width: 40vw;
 }

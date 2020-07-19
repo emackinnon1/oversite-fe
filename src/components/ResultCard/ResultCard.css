@@ -4,15 +4,18 @@
 	justify-content: flex-start;
 	align-items: flex-start;
 	margin: 2em;
-	padding: 2em;
 }
 
 .result-card img {
 	border: red solid 1px;
-	display: inline-block;
 	height: 6em;
-	margin: auto;
+	margin-right: 2em;
 	width: 6em;
+}
+
+.card-info {
+	display: flex;
+	flex-direction: column;
 }
 
 .card-info h2 {

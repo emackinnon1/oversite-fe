@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import "./AllReps.css";
 import ResultCard from "../ResultCard/ResultCard";
-import "./ResultPage.css";
 
-const ResultPage = () => {
+const AllReps = () => {
 	const [filter, setFilter] = useState("All");
-
 	return (
-		<div className="results">
-			<div className="search-results">
+		<div className="all-reps">
+			<div className="all-reps-container">
+				<ResultCard />
+				<ResultCard />
 				<ResultCard />
 				<ResultCard />
 				<ResultCard />
@@ -55,4 +56,4 @@ const ResultPage = () => {
 	);
 };
 
-export default ResultPage;
+export default AllReps;
