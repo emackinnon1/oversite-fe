@@ -1,0 +1,26 @@
+.result-card {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 2em;
+	padding: 2em;
+}
+
+.result-card img {
+	border: red solid 1px;
+	display: inline-block;
+	height: 6em;
+	margin: auto;
+	width: 6em;
+}
+
+.card-info h2 {
+	display: inline-block;
+	margin-bottom: auto;
+}
+
+.card-info ul {
+	display: inline-block;
+	margin: auto;
+}
