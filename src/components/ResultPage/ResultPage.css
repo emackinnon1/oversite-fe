@@ -1,0 +1,12 @@
+.results {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	width: 50%;
+}
+
+.filter {
+	display: flex;
+	flex-direction: column;
+}

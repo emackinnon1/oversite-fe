@@ -1,0 +1,13 @@
+.all-reps {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: auto;
+	width: 50%;
+}
+
+.all-reps-container {
+	overflow: scroll;
+	height: 75vh;
+	width: 40vw;
+}

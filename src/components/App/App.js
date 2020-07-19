@@ -1,5 +1,7 @@
 //Imports
 import React from "react";
+import ResultPage from "../ResultPage/ResultPage";
+import AllReps from "../AllReps/AllReps";
 import "./App.css";
 import { Switch, Route, Redirect } from 'react-router-dom';
 
@@ -11,6 +13,7 @@ const App = () => {
 	
 	
 	return (
+<<<<<<< HEAD
 		<main className="App">
 			<header className="App-header"></header>
 			<NavBar/>
@@ -20,6 +23,12 @@ const App = () => {
 			}/>
 		</Switch>
 		</main>
+=======
+		<div className="App">
+			{/* <ResultPage /> */}
+			<AllReps />
+		</div>
+>>>>>>> 7b7d1d1b35b4ab61d3e89976335c257e2e77cccb
 	);
 };
 
