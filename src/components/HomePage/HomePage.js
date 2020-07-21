@@ -14,6 +14,7 @@ const [serchParam, setSearchParam] = useState("Name")
 
 return (
     <section className ="home-page-container">
+		<img className="seal-logo" src="/images/usa_seal.svg" alt="usa congress seal"></img>
         <h1>Search for Senators and Representatives</h1>
         <form className ="search-container">
         <select 
