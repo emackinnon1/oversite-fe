@@ -36,7 +36,8 @@ const SingleRep = () => {
                         className="message-to-rep"> 
                     </input> */}
                     <textarea 
-                        className="message-to-rep">
+                        className="message-to-rep"
+                        placeholder="Type your message here....">
                     </textarea>
                     <button
                         type="submit"> Send Message

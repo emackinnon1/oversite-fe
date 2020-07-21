@@ -1,7 +1,6 @@
 .single-rep-container {
     display: flex;
     justify-content: space-around;
-    /* border: solid red 1px; */
     height: 100vh;
 
 }
@@ -11,7 +10,6 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* border: 1px solid red; */
     width: 50%;
     background-color: #f1faee;
     margin-left: 4em;
@@ -23,9 +21,6 @@
     font-size: 4vw;
 }
 
-.media-links-msg-input {
-    /* border: 1px solid blue; */
-}
 
 .rep-img {
     border-radius: 100%;
@@ -62,10 +57,6 @@
     font-size: 4vw;
 }
 
-/* .state-links h2 {
-    margin-left: 30%;
-} */
-
 
 .message-form {
     display: flex;
@@ -85,7 +76,13 @@
     -webkit-box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
     -moz-box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
     box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
+    border-radius: 10px;
 }
+
+textarea::placeholder {
+    text-align: center;
+}
+
 
 .message-form button {
     margin-top: 2em;
