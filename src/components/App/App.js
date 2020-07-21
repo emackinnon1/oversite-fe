@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 //Component Imports
 import HomePage from '../HomePage/HomePage'
 import NavBar from '../Navbar/Navbar'
+import SingleRep from "../SingleRep/SingleRep";
 
 const App = () => {
 	
@@ -23,6 +24,9 @@ const App = () => {
 			<Route 
 				path = '/results' 
 				render ={() => <ResultPage/> }/>
+			<Route 
+				path = '/single-rep'
+				render = {() => <SingleRep />}/>
 		</Switch>
 		</main>
 	);
