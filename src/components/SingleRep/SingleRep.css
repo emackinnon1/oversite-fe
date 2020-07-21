@@ -1,0 +1,97 @@
+.single-rep-container {
+    display: flex;
+    justify-content: space-around;
+    /* border: solid red 1px; */
+    height: 100vh;
+
+}
+
+.bio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid red; */
+    width: 50%;
+}
+
+.bio-container h1 {
+    font-size: 4vw;
+}
+
+.media-links-msg-input {
+    /* border: 1px solid blue; */
+}
+
+.rep-img {
+    border-radius: 100%;
+    width: 35%;
+    -webkit-box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 6px rgba(0,0,0,0.75);
+}
+
+
+.district-img {
+    width: 30%;
+}
+
+
+.media-links-msg-input {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.state-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    height: 95%;
+}
+
+.state-links h2 {
+    font-size: 4vw;
+}
+
+/* .state-links h2 {
+    margin-left: 30%;
+} */
+
+
+.message-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+}
+
+.message-to-rep {
+    padding: 10px;
+    text-align: start;
+    width: 80%;
+    height: 40%
+}
+
+.message-form button {
+    margin-top: 2em;
+    padding: 0.7em;
+}
+
+
+ul {
+    list-style-type: none
+}
+
+.state-links li {
+    text-align: center;
+    margin-bottom: .5em;
+    background-color: grey;
+    padding: 3px;
+    width: 100%;
+    color: white;
+}
