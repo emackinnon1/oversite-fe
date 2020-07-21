@@ -40,7 +40,6 @@ return (
 		<button 
 			type="submit" 
 			className="search-btn"
-			onClick = {()=>setUserState({user:"test"})}
 			>Search</button>
 
         </form>
