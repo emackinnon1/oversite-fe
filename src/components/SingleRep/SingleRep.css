@@ -13,6 +13,10 @@
     align-items: center;
     /* border: 1px solid red; */
     width: 50%;
+    background-color: #f1faee;
+    margin-left: 4em;
+    height: 95%;
+    border-radius: 10px;
 }
 
 .bio-container h1 {
@@ -50,6 +54,8 @@
     justify-content: space-around;
     width: 80%;
     height: 95%;
+    background-color: #f1faee;
+    border-radius: 10px;
 }
 
 .state-links h2 {
@@ -71,10 +77,14 @@
 }
 
 .message-to-rep {
+    font-size: 2vw;
     padding: 10px;
     text-align: start;
     width: 80%;
-    height: 40%
+    height: 40%;
+    -webkit-box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
+    -moz-box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
+    box-shadow: 0px 0px 12px 5px rgba(69,123,157,1);
 }
 
 .message-form button {
@@ -93,5 +103,5 @@ ul {
     background-color: grey;
     padding: 3px;
     width: 100%;
-    color: white;
+    color: white; 
 }
