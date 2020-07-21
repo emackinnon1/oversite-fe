@@ -23,7 +23,6 @@ return (
             name="search-options"
             onChange={e => setSearchParam(e.target.value)}
             defaultValue = {serchParam}>    
-      
             <option className="search-option" value="name">Name</option>
             <option className="search-option" value="state">State</option>
             <option className="search-option" value="zip">Zip</option>
