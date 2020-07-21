@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 
 //App Imports
-import './HomePage.css'
-
+import "./HomePage.css";
 
 const HomePage = () => {
 

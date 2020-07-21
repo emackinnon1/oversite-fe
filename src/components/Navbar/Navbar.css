@@ -6,16 +6,16 @@ nav {
 }
 
 .nav-link {
-    margin-right: .2em;
-    text-align: center;
-    background-color: grey;
-    color: white;
-    padding: 1em;
-    font-size: 1.4vw;
-    width: 16%;
+	margin-right: 0.2em;
+	text-align: center;
+	background-color: #457b9d;
+	color: #f1faee;
+	padding: 1em;
+	font-size: 1.4vw;
+	width: 16%;
 }
 
-nav :nth-child(3) {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+nav :nth-child(2) {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }

@@ -1,40 +1,41 @@
 .home-page-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+	color: #f1faee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
 }
 
 .home-page-container h1 {
-    font-size: 3vw;
+	font-size: 3vw;
 }
 
 .search-container {
-    padding: 1em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    height: auto;
-    width: 90%;
+	padding: 1em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: auto;
+	width: 90%;
 }
 
 .search-params,
 .search-option,
 .search-input {
-    margin: 1em;
-    height: 4.8em;
-    width: 40%;
-    border-radius: 5px;
-    border: grey solid 3px;
-    font-size: 1em;
+	margin: 1em;
+	height: 4.8em;
+	width: 40%;
+	border-radius: 5px;
+	border: #457b9d solid 3px;
+	font-size: 1em;
 }
 
 .search-input {
-    background: url(/images/search.svg) no-repeat scroll 11px 13px;
-    background-size: 35px;
-    padding-left: 60px;
+	background: url(/images/search.svg) no-repeat scroll 11px 13px;
+	background-size: 35px;
+	background-color: #f1faee;
+	padding-left: 60px;
 }
 
 .search-params {
@@ -44,12 +45,11 @@
 
 
 .search-btn {
-    width: 20%;
-    height: 4.8em;
-    font-size: 1em;
-    color: white;
-    background-color: grey;
-    border: grey solid;
-    border-radius: 5px;
+	width: 20%;
+	height: 4.8em;
+	font-size: 1em;
+	color: white;
+	background-color: #457b9d;
+	border: #457b9d solid;
+	border-radius: 5px;
 }
-

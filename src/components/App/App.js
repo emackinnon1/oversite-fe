@@ -3,7 +3,7 @@ import React from "react";
 import ResultPage from "../ResultPage/ResultPage";
 import AllReps from "../AllReps/AllReps";
 import "./App.css";
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect } from "react-router-dom";
 
 //Component Imports
 import HomePage from '../HomePage/HomePage'
@@ -11,8 +11,6 @@ import NavBar from '../Navbar/Navbar'
 import SingleRep from "../SingleRep/SingleRep";
 
 const App = () => {
-	
-	
 	return (
 		<main className="App">
 			<header className="App-header"></header>
