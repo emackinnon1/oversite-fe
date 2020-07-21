@@ -1,7 +1,8 @@
 nav {
-	display: flex;
-	justify-content: flex-start;
-	height: 4.8vw;
+    display: flex;
+    justify-content: flex-start;
+    height: 4.8vw;
+    margin-bottom: 4em;
 }
 
 .nav-link {
