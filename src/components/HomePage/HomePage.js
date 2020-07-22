@@ -14,6 +14,7 @@ const [serchParam, setSearchParam] = useState("Name")
 
 return (
     <section className ="home-page-container">
+		<img className="seal-logo" src="/images/usa_seal.svg" alt="usa congress seal"></img>
         <h1>Search for Senators and Representatives</h1>
         <form className ="search-container">
         <select 
@@ -34,7 +35,7 @@ return (
             value = {search}
             onChange = {e => setSearch(e.target.value)} >
         </input>
-        <button type="submit" className="search-btn">Search</button>
+        <button type="submit" className="search-btn"><img src="/images/search.svg" alt="search icon"/></button>
 
         </form>
     </section>
