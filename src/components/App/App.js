@@ -1,9 +1,10 @@
 //Imports
-import React from "react";
+import React, { useEffect } from "react";
 import ResultPage from "../ResultPage/ResultPage";
 import AllReps from "../AllReps/AllReps";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { getUsers } from '../../apiCalls'
 
 //Component Imports
 import HomePage from "../HomePage/HomePage";
@@ -11,6 +12,21 @@ import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 
 const App = () => {
+
+	useEffect(() => {
+		let mounted = true;
+		const getUserData = async () => {
+			console.log(await getUsers())
+		}
+		if (mounted) {
+			getUserData();
+		}
+		return () => mounted = false;
+	}, [])
+
+	
+
+
 	return (
 		<main className="App">
 			<header className="App-header"></header>
