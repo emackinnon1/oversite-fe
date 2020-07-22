@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './SingleRep.css'
 
+import Collapsible from '../Collapsible/Collapsible'
 
 
 
@@ -24,6 +25,14 @@ const SingleRep = () => {
             <div className="media-links-msg-input">
                 <div className="state-links">
                 <h2>Vermont</h2>
+                <div>
+                    <Collapsible title="Address">
+                    <div> 
+                        <p> 123 Main Street, Washington  DC
+                        </p>
+                    </div>
+                    </Collapsible>
+                 </div>
                 <ul>
                     <li>Website</li>
                     <li>YouTube</li>
@@ -31,10 +40,6 @@ const SingleRep = () => {
                     <li>Twitter</li>
                 </ul>
                 <form className='message-form'>
-                    {/* <input
-                        type="textarea"
-                        className="message-to-rep"> 
-                    </input> */}
                     <textarea 
                         className="message-to-rep"
                         placeholder="Type your message here....">
