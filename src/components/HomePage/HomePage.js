@@ -1,16 +1,18 @@
 //Imports 
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 
+
 //App Imports
 import "./HomePage.css";
+import { UserContext } from '../App/userContext';
 
 const HomePage = () => {
 
 const [search, setSearch] = useState('')
 const [serchParam, setSearchParam] = useState("Name")
-
+const [userState, setUserState] = useContext(UserContext)
 
 return (
     <section className ="home-page-container">
