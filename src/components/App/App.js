@@ -1,22 +1,24 @@
 //Imports
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import ResultPage from "../ResultPage/ResultPage";
 import AllReps from "../AllReps/AllReps";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { getUsers } from '../../apiCalls'
 
+import { getUsers } from '../../apiCalls'
+import { UserContext } from "./userContext"
 //Component Imports
 import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 
 const App = () => {
+	const [userState, setUserState] = useContext(UserContext)
 
 	useEffect(() => {
 		let mounted = true;
 		const getUserData = async () => {
-			console.log(await getUsers())
+			setUserState(await getUsers())
 		}
 		if (mounted) {
 			getUserData();

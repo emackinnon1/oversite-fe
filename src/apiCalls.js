@@ -1,18 +1,3 @@
-// export const getUsers = async () => {
-//     try {
-//         const result = await fetch('https://oversite-api.herokuapp.com/users');
-//         if(!result.ok) {
-//           throw new Error(`Problem received status code of ${result.status}`)
-//         }
-    
-//         const data = await result.json();
-//         return data[1];
-//     } catch(error) {
-//         console.log(error)
-//     }
-// };
-
-
 export const getUsers = async () => {
 
     try {
@@ -25,7 +10,7 @@ export const getUsers = async () => {
                 throw new Error()
             }
             const response = await fetchedData.json();
-            return response
+            return response[1]
     } catch (error) {
         console.log(error)
     }
