@@ -35,7 +35,7 @@ return (
             value = {search}
             onChange = {e => setSearch(e.target.value)} >
         </input>
-        <button type="submit" className="search-btn">Search</button>
+        <button type="submit" className="search-btn"><img src="/images/search.svg" alt="search icon"/></button>
 
         </form>
     </section>

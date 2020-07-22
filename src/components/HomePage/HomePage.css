@@ -35,27 +35,24 @@
 	border-radius: 5px;
 	border: #457b9d solid 3px;
 	font-size: 1em;
-}
-
-.search-input {
-	background: url(/images/search.svg) no-repeat scroll 11px 13px;
 	background-size: 35px;
 	background-color: #f1faee;
-	padding-left: 60px;
+	padding-left: 30px;
 }
-
-.search-params {
-    padding-left: 30px;
-}
-
 
 
 .search-btn {
-	width: 20%;
-	height: 4.8em;
-	font-size: 1em;
-	color: white;
-	background-color: #457b9d;
-	border: #457b9d solid;
+    width: 10%;
+    height: 4.8em;
+    font-size: 1em;
+    color: white;
+    background-color: #457b9d;
+    border: #457b9d solid;
 	border-radius: 5px;
+	padding: 10px;
+}
+
+.search-btn img {
+	height: 80%;
+	fill: white;
 }
