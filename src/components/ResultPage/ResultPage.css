@@ -3,10 +3,11 @@
 	flex-direction: row;
 	justify-content: space-between;
 	margin: auto;
-	width: 50%;
+	width: 60%;
 }
 
-.filter {
-	display: flex;
-	flex-direction: column;
+.search-results {
+	background-color: #f1faee;
+	border-radius: 5px;
+	width: 40vw;
 }

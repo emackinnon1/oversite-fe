@@ -14,7 +14,7 @@ const AllReps = () => {
 				<ResultCard />
 			</div>
 			<div className="filter">
-				<p>Filter results:</p>
+				<h3>Filter results:</h3>
 				<label>
 					<input
 						type="radio"
