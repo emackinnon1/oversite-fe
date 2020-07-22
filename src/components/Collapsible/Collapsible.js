@@ -1,39 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import './Collapsible.css'
 
 
-class Collapsible extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            open: false
-        }
-    }
-
-   
-
-    togglePanel = (e) => {
-        this.setState({open: !this.state.open})
-    }
 
 
-    render() {
-      return (
-      
-      <div>
-        <div onClick={(e)=>this.togglePanel(e)} 
+const Collapsible = (props) => {
+
+const [panelState, togglePanel] = useState({open:false})
+
+    return (
+        <div>
+        <div onClick={e => togglePanel({open:!panelState.open})} 
             className='header'>
-            {this.props.title}
+            {props.title}
         </div>
-        {this.state.open ? (
+        {panelState.open ? (
             <div className='content'>
-                {this.props.children}
+                {props.children}
             </div>
             ) : null}
-      </div>);
-    }
-  }
-
+        </div>
+        );
+    
+}
 
 export default Collapsible
-
