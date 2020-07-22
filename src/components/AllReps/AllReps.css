@@ -3,11 +3,27 @@
 	flex-direction: row;
 	justify-content: space-between;
 	margin: auto;
-	width: 50%;
+	width: 70%;
 }
 
 .all-reps-container {
+	background-color: #f1faee;
+	border-radius: 5px;
 	overflow: scroll;
 	height: 75vh;
 	width: 40vw;
+}
+
+.filter {
+	background-color: #a8dadc;
+	border-radius: 0.2em;
+	height: 10em;
+	display: flex;
+	flex-direction: column;
+	padding: 1.2em;
+	width: 15em;
+}
+
+.filter label {
+	margin: 0.2em;
 }
