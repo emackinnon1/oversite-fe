@@ -17,8 +17,14 @@ describe('HomePage Component', () => {
     const title = getByText('Search for Senators and Representatives')
     expect(title).toBeInTheDocument()
     
-    const selectInput = getByText('Name')
-    expect(selectInput).toBeInTheDocument()
+    const selectInputName = getByText('Name')
+    expect(selectInputName).toBeInTheDocument()
+
+    const selectInputState = getByText('State')
+    expect(selectInputState).toBeInTheDocument()
+
+    
+
     });
 
 
