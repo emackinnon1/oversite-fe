@@ -5,7 +5,9 @@ import "./index.css";
 import App from "./components/App/App";
 import * as serviceWorker from "./serviceWorker";
 import { UserProvider } from './components/App/userContext'
+import dotenv from 'dotenv';
 
+dotenv.config()
 
 ReactDOM.render(
     <BrowserRouter>

@@ -21,7 +21,11 @@ const App = () => {
 			setUserState(await getUsers())
 		}
 		if (mounted) {
-			getUserData();
+			if (process.env.NODE_ENV === "production") {
+				getUserData(process.env.REACT_APP_PRODUCTION_URL)
+			} else if (process.env.NODE_ENV === "development") {
+				getUserData(process.env.REACT_APP_DEVELOPMENT)
+			}
 		}
 		return () => mounted = false;
 	}, [])
