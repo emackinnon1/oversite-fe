@@ -12,20 +12,20 @@ import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 
+import { APP_URL } from '../../apiConfig'
+
 const App = () => {
 	const [userState, setUserState] = useContext(UserContext)
 
+console.log(process.env.NODE_ENV);
+
 	useEffect(() => {
 		let mounted = true;
-		const getUserData = async () => {
-			setUserState(await getUsers())
+		const getUserData = async (url) => {
+			setUserState(await getUsers(APP_URL))
 		}
 		if (mounted) {
-			if (process.env.NODE_ENV === "production") {
-				getUserData(process.env.REACT_APP_PRODUCTION_URL)
-			} else if (process.env.NODE_ENV === "development") {
-				getUserData(process.env.REACT_APP_DEVELOPMENT)
-			}
+			getUserData(APP_URL);
 		}
 		return () => mounted = false;
 	}, [])
