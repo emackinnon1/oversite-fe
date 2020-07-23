@@ -1,6 +1,6 @@
 nav {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     height: 4.8vw;
     margin-bottom: 4em;
 }
@@ -12,10 +12,52 @@ nav {
 	color: #f1faee;
 	padding: 1em;
 	font-size: 1.4vw;
-	width: 16%;
+	width: 50%;
 }
 
-nav :nth-child(2) {
+.nav-links-container {
+	display: flex;
+    justify-content: space-between;
+    height: 4.8vw;
+	margin-bottom: 4em;
+	width: 50%;
+}
+
+.nav-links-container {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
+}
+
+
+.user-avatar {
+	cursor: pointer;
+	width: 60%;
+    float: right;
+    padding: 7px;
+    margin: 5px 5px 5px 0px;
+}
+
+.avatar-container {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width: 8%;
+	background-color: #457b9d;
+}
+
+.avatar-content {
+	border-radius: 10px;
+	cursor: pointer;
+	width: auto;
+	border: solid black 1px;
+	background-color: rgba(68,123,157, 0.6);
+	padding: 15px;
+    font-family: inherit;
+	font-size: 14px;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	z-index: 1;
+	margin-top: 50px;
+	color: white;
 }
