@@ -1,19 +1,22 @@
 //Imports 
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Link, withRouter } from 'react-router-dom'
 
+
 //App Imports
 import "./HomePage.css";
+import { UserContext } from '../App/userContext';
 
 const HomePage = () => {
 
 const [search, setSearch] = useState('')
 const [serchParam, setSearchParam] = useState("Name")
-
+const [userState, setUserState] = useContext(UserContext)
 
 return (
     <section className ="home-page-container">
+		<img className="seal-logo" src="/images/usa_seal.svg" alt="usa congress seal"></img>
         <h1>Search for Senators and Representatives</h1>
         <form className ="search-container">
         <select 
@@ -34,7 +37,7 @@ return (
             value = {search}
             onChange = {e => setSearch(e.target.value)} >
         </input>
-        <button type="submit" className="search-btn">Search</button>
+        <button type="submit" className="search-btn"><img src="/images/search.svg" alt="search icon"/></button>
 
         </form>
     </section>
