@@ -10,13 +10,13 @@ import { UserContext } from '../App/userContext';
 
 const HomePage = () => {
 
+    const [userState, setUserState] = useContext(UserContext)
+
 const [search, setSearch] = useState('')
 const [searchParam, setSearchParam] = useState("Name")
-const [userState, setUserState] = useContext(UserContext)
+const [usState, setUsState] = useState('')
 
-const setNewValue = (newValue) => {
-    console.log('this is the State code:' + newValue);
-  }
+
 
 return (
     <section className ="home-page-container">
@@ -43,6 +43,7 @@ return (
                     justifyContent = "space-around"
                     alignItems = "center"
                     selectWidth= "100%"
+                    setUsState = {setUsState}
                 /> : 
         <input 
             className="search-input" 

@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
-import { array } from 'prop-types';
 
 
 
 
 const StatePicker = (props) => {
 
-    const [state, setState] = useState('')
-const { border, 
-        width, 
-        display, 
-        flexDirection, 
-        height, 
-        justifyContent, 
-        alignItems, 
-        selectWidth} = props
+    const { border, 
+            width, 
+            display, 
+            flexDirection, 
+            height, 
+            justifyContent, 
+            alignItems, 
+            selectWidth} = props
+
 
     return (
         <div className="state-picker-container" 
@@ -38,8 +37,7 @@ const { border,
                         paddingLeft: "30px",
                         fontSize: "1em"
                     }}
-                onChange={e => setState(e.target.value)}
-                defaultValue = {state}
+                onChange={e => props.setUsState(e.target.value)}
                 >  
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
