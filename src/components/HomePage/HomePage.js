@@ -14,7 +14,7 @@ const HomePage = () => {
 
 const [search, setSearch] = useState('')
 const [searchParam, setSearchParam] = useState("Name")
-const [usState, setUsState] = useState('')
+const [usState, setUsState] = useState('AL')
 
 
 
