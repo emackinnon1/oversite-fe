@@ -30,9 +30,13 @@ const NavBar = () => {
 				{panelState.open && (
 					<div className="avatar-content">
 						<ul>
-							<li>{userState.first_name + " " + userState.last_name}</li>
+							<li>
+								{userState.first_name} {userState.last_name}
+							</li>
 							<li>{userState.email}</li>
-							<li>{`${userState.street_address}, ${userState.state} ${userState.zip}`}</li>
+							<li>
+								{userState.street_address}, {userState.state} {userState.zip}
+							</li>
 						</ul>
 					</div>
 				)}
