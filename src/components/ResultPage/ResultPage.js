@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ResultCard from "../ResultCard/ResultCard";
+import { searchRepsByState } from "../../apiCalls";
 import "./ResultPage.css";
+import { UserContext } from "../App/userContext";
 
-const ResultPage = () => {
+import { APP_URL } from "../../apiConfig";
+
+const ResultPage = (props) => {
 	const [filter, setFilter] = useState("All");
+	// const [searchList, setSearchList] = useState({});
+	const [resultList, setResultList] = useContext(UserContext);
+
+	// useEffect(() => {
+	// 	let mounted = true;
+	// 	const getSearchData = async (url) => {
+	// 		setResultList(await searchRepsByState(url));
+	// 	};
+	// 	if (mounted) {
+	// 		getSearchData(APP_URL);
+	// 	}
+	// 	return () => (mounted = false);
+	// }, []);
+
+	// const senateCards =
+	// const houseCards =
 
 	return (
 		<div className="results">
-			<div className="search-results">
-				<ResultCard />
-				<ResultCard />
-				<ResultCard />
-			</div>
+			<div className="search-results">{/* {cards} */}</div>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
