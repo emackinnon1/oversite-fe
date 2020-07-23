@@ -22,7 +22,7 @@ console.log(process.env.NODE_ENV);
 	useEffect(() => {
 		let mounted = true;
 		const getUserData = async (url) => {
-			setUserState(await getUsers(APP_URL))
+			setUserState(await getUsers(url))
 		}
 		if (mounted) {
 			getUserData(APP_URL);
