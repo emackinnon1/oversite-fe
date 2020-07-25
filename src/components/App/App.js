@@ -1,37 +1,32 @@
 //Imports
-import React, { useEffect,useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import ResultPage from "../ResultPage/ResultPage";
 import AllReps from "../AllReps/AllReps";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import { getUsers } from '../../apiCalls'
-import { UserContext } from "./userContext"
+import { getUsers } from "../../apiCalls";
+import { UserContext } from "./userContext";
 //Component Imports
 import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 
-import { APP_URL } from '../../apiConfig'
+import { APP_URL } from "../../apiConfig";
 
 const App = () => {
-	const [userState, setUserState] = useContext(UserContext)
-
-console.log(process.env.NODE_ENV);
+	const [userState, setUserState] = useContext(UserContext);
 
 	useEffect(() => {
 		let mounted = true;
 		const getUserData = async (url) => {
-			setUserState(await getUsers(url))
-		}
+			setUserState(await getUsers(url));
+		};
 		if (mounted) {
 			getUserData(APP_URL);
 		}
-		return () => mounted = false;
-	}, [])
-
-	
-
+		return () => (mounted = false);
+	}, []);
 
 	return (
 		<main className="App">
@@ -40,7 +35,10 @@ console.log(process.env.NODE_ENV);
 			<Switch>
 				<Route exact path="/" render={() => <HomePage />} />
 				<Route path="/results" render={() => <ResultPage />} />
-				<Route path="/single-rep" render={() => <SingleRep />} />
+				<Route
+					path="/member/:id"
+					render={({ match }) => <SingleRep id={match.params.id} />}
+				/>
 				<Route path="/all" render={() => <AllReps />} />
 			</Switch>
 		</main>
