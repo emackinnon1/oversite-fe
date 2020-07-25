@@ -35,7 +35,10 @@ const App = () => {
 			<Switch>
 				<Route exact path="/" render={() => <HomePage />} />
 				<Route path="/results" render={() => <ResultPage />} />
-				<Route path="/single-rep" render={() => <SingleRep />} />
+				<Route
+					path="/member/:id"
+					render={({ match }) => <SingleRep id={match.params.id} />}
+				/>
 				<Route path="/all" render={() => <AllReps />} />
 			</Switch>
 		</main>

@@ -23,3 +23,16 @@ export const searchRepsByState = async (url, state) => {
 		console.log(error);
 	}
 };
+
+export const getMemberInfo = async (url, id) => {
+	try {
+		const fetchedData = await fetch(`${url}member/${id}`);
+		if (!fetchedData.ok) {
+			throw new Error();
+		}
+		const response = await fetchedData.json();
+		return response.results;
+	} catch (error) {
+		console.log(error);
+	}
+};

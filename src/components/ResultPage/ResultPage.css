@@ -9,5 +9,7 @@
 .search-results {
 	background-color: #f1faee;
 	border-radius: 5px;
+	height: 75vh;
+	overflow: scroll;
 	width: 40vw;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ResultCard.css";
 
 const ResultCard = (props) => {
@@ -7,9 +8,11 @@ const ResultCard = (props) => {
 		<div className="result-card">
 			<img src={props.image} alt="headshot" />
 			<div className="card-info">
-				<h2>
-					{props.first_name} {props.last_name}
-				</h2>
+				<Link to={`/member/${props.id}`}>
+					<h2>
+						{props.first_name} {props.last_name}
+					</h2>
+				</Link>
 				<ul>
 					<li>{props.role}</li>
 					<li>{props.party}</li>

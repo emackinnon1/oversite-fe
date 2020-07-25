@@ -17,10 +17,10 @@ const ResultPage = () => {
 			return;
 		}
 		const senateCards = list.results[0].senate.map((sen) => (
-			<ResultCard {...sen} />
+			<ResultCard {...sen} key={sen.id} />
 		));
 		const houseCards = list.results[1].house.map((rep) => (
-			<ResultCard {...rep} />
+			<ResultCard {...rep} key={rep.id} />
 		));
 
 		return (
@@ -32,8 +32,6 @@ const ResultPage = () => {
 			</>
 		);
 	};
-
-	makeCards(resultList);
 
 	return (
 		<div className="results">
