@@ -15,16 +15,13 @@ const HomePage = () => {
 		UserContext
 	);
 
-	const [searchTerm, setSearchTerm] = useState("");
-	const [searchParam, setSearchParam] = useState("Name");
-	const [usState, setUsState] = useState("AL");
+	const [searchInput, setSearchInput] = useState("AL");
+	const [searchParam, setSearchParam] = useState("state");
 
 	const searchByState = async (e, stateToSearch) => {
 		e.preventDefault();
 		setResultList(await searchRepsByState(APP_URL, stateToSearch));
 	};
-
-	console.log(resultList);
 
 	return (
 		<section className="home-page-container">
@@ -40,11 +37,11 @@ const HomePage = () => {
 					name="search-options"
 					onChange={(e) => setSearchParam(e.target.value)}
 					defaultValue={searchParam}>
-					<option className="search-option" value="name">
-						Name
-					</option>
 					<option className="search-option" value="state">
 						State
+					</option>
+					<option className="search-option" value="name">
+						Name
 					</option>
 					<option className="search-option" value="zip">
 						Zip
@@ -60,21 +57,23 @@ const HomePage = () => {
 						justifyContent="space-around"
 						alignItems="center"
 						selectWidth="100%"
-						setUsState={setUsState}
+						setSearchInput={setSearchInput}
 					/>
 				) : (
 					<input
 						className="search-input"
 						type="text"
 						placeholder="Search"
-						value={searchTerm}
-						onChange={(e) => setSearchTerm(e.target.value)}></input>
+						value={searchInput}
+						onChange={(e) => setSearchInput(e.target.value)}></input>
 				)}
 				<button
 					type="submit"
 					className="search-btn"
-					onClick={(e) => searchByState(e, usState)}>
-					<img src="/images/search.svg" alt="search icon" />
+					onClick={(e) => searchByState(e, searchInput)}>
+					<Link to={searchParam === "state" && "/results"}>
+						<img src="/images/search.svg" alt="search icon" />
+					</Link>
 				</button>
 			</form>
 		</section>

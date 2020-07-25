@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 
-const StatePicker = (props) => {
-	const {
-		border,
-		width,
-		display,
-		flexDirection,
-		height,
-		justifyContent,
-		alignItems,
-		selectWidth,
-	} = props;
-
+const StatePicker = ({
+	border,
+	width,
+	display,
+	flexDirection,
+	height,
+	justifyContent,
+	alignItems,
+	selectWidth,
+	setSearchInput,
+}) => {
 	return (
 		<div
 			className="state-picker-container"
@@ -37,7 +36,7 @@ const StatePicker = (props) => {
 					paddingLeft: "30px",
 					fontSize: "1em",
 				}}
-				onChange={(e) => props.setUsState(e.target.value)}>
+				onChange={(e) => setSearchInput(e.target.value)}>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>

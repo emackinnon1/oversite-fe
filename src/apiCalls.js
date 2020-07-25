@@ -14,7 +14,6 @@ export const getUsers = async (url) => {
 export const searchRepsByState = async (url, state) => {
 	try {
 		const fetchedData = await fetch(`${url}members_by_state/${state}`);
-		console.log(fetchedData);
 		if (!fetchedData.ok) {
 			throw new Error();
 		}
