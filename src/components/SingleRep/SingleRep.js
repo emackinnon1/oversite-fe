@@ -19,40 +19,60 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	console.log(memberInfo[0]);
+	console.log(memberInfo);
 
 	return (
 		<section className="single-rep-container">
-			<div className="bio-container">
-				<h1>
-					{memberInfo.first_name} {memberInfo.last_name}
-				</h1>
-				<img
-					className="rep-img"
-					src={memberInfo.image}
-					alt={`${memberInfo.first_name} ${memberInfo.last_name}`}></img>
-				<h3>{memberInfo.party}</h3>
-				<h4>Senate</h4>
-				<img
-					className="district-img"
-					src="/images/capital_hill.png"
-					alt="capital hill placeholder"></img>
-			</div>
-			<div className="media-links-msg-input">
-				<div className="state-links">
-					<h2>Vermont</h2>
-					<div></div>
+			<h1>
+				{memberInfo.first_name} {memberInfo.last_name}
+			</h1>
+			<img
+				className="rep-img"
+				src={memberInfo.image}
+				alt={`${memberInfo.first_name} ${memberInfo.last_name}`}
+			/>
+			<div className="bottom">
+				<div className="bio-container">
+					<h3>{memberInfo.state}</h3>
+					<h3>{memberInfo.party}</h3>
+					<h4>{memberInfo.chamber}</h4>
+					<h4>{memberInfo.role}</h4>
+					<h3>{memberInfo.district && `District: ${memberInfo.district}`}</h3>
+					<p>Phone: {memberInfo.phone}</p>
+					<p>Office: {memberInfo.address}</p>
+				</div>
+				<div className="contact-container">
 					<ul>
-						<li>Website</li>
-						<li>YouTube</li>
-						<li>Facebook</li>
-						<li>Twitter</li>
+						{memberInfo.contact_form_url && (
+							<li>
+								<a href={memberInfo.contact_form_url}>Contact Form</a>
+							</li>
+						)}
+						{memberInfo.facebook && (
+							<li>
+								<a href={memberInfo.facebook}>Facebook</a>
+							</li>
+						)}
+						{memberInfo.twitter_url && (
+							<li>
+								<a href={memberInfo.twitter_url}>Twitter</a>
+							</li>
+						)}
+						{memberInfo.youtube && (
+							<li>
+								<a href={memberInfo.youtube}>Youtube</a>
+							</li>
+						)}
 					</ul>
 					<form className="message-form">
 						<textarea
-							className="message-to-rep"
-							placeholder="Type your message here...."></textarea>
-						<button type="submit"> Send Message</button>
+							placeholder="Type your message here...."
+							style={{
+								height: "6em",
+								resize: "none",
+								width: "inherit",
+							}}></textarea>
+						<button type="submit">Send Message</button>
 					</form>
 				</div>
 			</div>
