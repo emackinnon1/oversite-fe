@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ResultCard from "../ResultCard/ResultCard";
+import { searchRepsByState } from "../../apiCalls";
 import "./ResultPage.css";
+import { UserContext } from "../App/userContext";
+
+import { APP_URL } from "../../apiConfig";
 
 const ResultPage = () => {
 	const [filter, setFilter] = useState("All");
+	const [userState, setUserState, resultList, setResultList] = useContext(
+		UserContext
+	);
+
+	const makeCards = (list) => {
+		if (!list.hasOwnProperty("results")) {
+			return;
+		}
+		const senateCards = list.results[0].senate.map((sen) => (
+			<ResultCard {...sen} />
+		));
+		const houseCards = list.results[1].house.map((rep) => (
+			<ResultCard {...rep} />
+		));
+
+		return (
+			<>
+				<h2>Senate</h2>
+				{senateCards}
+				<h2>House of Representatives</h2>
+				{houseCards}
+			</>
+		);
+	};
+
+	makeCards(resultList);
 
 	return (
 		<div className="results">
-			<div className="search-results">
-				<ResultCard />
-				<ResultCard />
-				<ResultCard />
-			</div>
+			<div className="search-results">{makeCards(resultList)}</div>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
@@ -19,7 +45,7 @@ const ResultPage = () => {
 						type="radio"
 						value="All"
 						checked={filter === "All"}
-						onClick={(e) => setFilter(e.target.value)}
+						onChange={(e) => setFilter(e.target.value)}
 					/>
 					All results
 				</label>
@@ -28,7 +54,7 @@ const ResultPage = () => {
 						type="radio"
 						value="Republican"
 						checked={filter === "Republican"}
-						onClick={(e) => setFilter(e.target.value)}
+						onChange={(e) => setFilter(e.target.value)}
 					/>
 					Republican
 				</label>
@@ -37,7 +63,7 @@ const ResultPage = () => {
 						type="radio"
 						value="Democrat"
 						checked={filter === "Democrat"}
-						onClick={(e) => setFilter(e.target.value)}
+						onChange={(e) => setFilter(e.target.value)}
 					/>
 					Democrat
 				</label>
@@ -46,7 +72,7 @@ const ResultPage = () => {
 						type="radio"
 						value="Independent"
 						checked={filter === "Independent"}
-						onClick={(e) => setFilter(e.target.value)}
+						onChange={(e) => setFilter(e.target.value)}
 					/>
 					Independent
 				</label>

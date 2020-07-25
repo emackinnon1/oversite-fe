@@ -40,14 +40,14 @@
 	padding-left: 30px;
 }
 
-
 .search-btn {
-    width: 10%;
-    height: 4.8em;
-    font-size: 1em;
-    color: white;
-    background-color: #457b9d;
-    border: #457b9d solid;
+	display: inline-block;
+	width: 8em;
+	height: 4.8em;
+	font-size: 1em;
+	color: white;
+	background-color: #457b9d;
+	border: #457b9d solid;
 	border-radius: 5px;
 	padding: 10px;
 }
