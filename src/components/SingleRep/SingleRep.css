@@ -1,21 +1,19 @@
 .single-rep-container {
-	display: flex;
-	justify-content: space-around;
-	height: 100vh;
-	position: relative;
-}
-
-.single-rep-container {
+	align-items: center;
+	background-color: #f1faee;
+	border-radius: 0.5%;
 	display: flex;
 	flex-direction: column;
+	height: 65vh;
 	justify-content: space-around;
-	align-items: center;
-	width: 50%;
 	position: relative;
-	background-color: #f1faee;
+	padding: 2em;
 	margin: auto;
-	height: 80vh;
-	border-radius: 10px;
+	width: 50%;
+}
+
+.single-rep-container h1 {
+	margin: 1em;
 }
 
 .profile-container {
@@ -35,14 +33,9 @@
 	flex-direction: row;
 }
 
-.bio-container h1 {
-	font-size: 2em;
-}
-
 .bio-container h3,
 .bio-container h4,
 .bio-container p {
-	border-bottom: 1px solid #457b9d;
 	display: inline-block;
 	padding-bottom: 0.2em;
 }
@@ -50,7 +43,7 @@
 .bio-info {
 	display: flex;
 	flex-direction: column;
-	padding: 2em;
+	margin-left: 2em;
 }
 
 .media-links-msg-input {
@@ -61,12 +54,17 @@
 }
 
 .message-form {
+	align-items: center;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
 	height: 50%;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.message-form textarea {
+	box-shadow: -8px 8px 10px -11px rgba(69, 123, 157, 1);
 }
 
 textarea::placeholder {
@@ -87,18 +85,25 @@ textarea::placeholder {
 	align-items: center;
 }
 
-.contact-container ul {
+.bio-info ul {
+	display: flex;
+	flex-direction: row;
 	list-style-type: none;
-	width: 15em;
 }
 
-.contact-container li {
+.bio-info li {
+	background-color: #457b9d;
+	border-radius: 25%;
 	color: #f1faee;
 	text-align: center;
-	margin-bottom: 0.5em;
-	background-color: #457b9d;
-	padding: 3px;
-	width: 100%;
+	margin: 0.5em;
+	width: 3em;
+}
+
+.bio-info img {
+	height: inherit;
+	padding: 0.5em;
+	width: 3em;
 }
 
 .contact-container a {
