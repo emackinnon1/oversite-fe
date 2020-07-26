@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-  cycpress: cypress-io/cypress@1.0.0
+  cypress: cypress-io/cypress@1.25.1
 jobs:
   build-and-test:
     executor:
