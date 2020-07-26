@@ -36,3 +36,23 @@ export const getMemberInfo = async (url, id) => {
 		console.log(error);
 	}
 };
+
+// export const twitterPing = () => {
+// 	fetch("https://gentle-falls-99830.herokuapp.com/");
+// };
+
+export const sendTweet = async (url, message, handle) => {
+	try {
+		const fetchedData = await fetch(
+			`${url}/send-tweet?message=${message}&handle=${handle}`
+		);
+		if (!fetchedData.ok) {
+			throw new Error();
+		}
+		const response = await fetchedData.json();
+		console.log(response);
+		return response.results;
+	} catch (error) {
+		console.log(error);
+	}
+};

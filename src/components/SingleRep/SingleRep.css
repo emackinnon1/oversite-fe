@@ -18,28 +18,39 @@
 	border-radius: 10px;
 }
 
-.bottom {
+.profile-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	width: 75%;
+}
+
+.rep-img {
+	width: auto;
+	height: 15em;
+}
+
+.bio-container {
+	display: flex;
+	flex-direction: row;
 }
 
 .bio-container h1 {
 	font-size: 2em;
 }
 
-.rep-img {
-	border-radius: 100%;
-	width: auto;
-	-webkit-box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.75);
-	-moz-box-shadow: 0px 0px 28px 6px rgba(0, 0, 0, 0.75);
-	box-shadow: 0px 0px 10px 2px #1d3557;
-	height: 15em;
+.bio-container h3,
+.bio-container h4,
+.bio-container p {
+	border-bottom: 1px solid #457b9d;
+	display: inline-block;
+	padding-bottom: 0.2em;
 }
 
-.district-img {
-	width: 30%;
+.bio-info {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
 }
 
 .media-links-msg-input {
@@ -73,6 +84,7 @@ textarea::placeholder {
 .contact-container {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .contact-container ul {

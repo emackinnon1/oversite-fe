@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRep.css";
-import { getMemberInfo } from "../../apiCalls";
+import { getMemberInfo, sendTweet } from "../../apiCalls";
 import Collapsible from "../Collapsible/Collapsible";
 import { APP_URL } from "../../apiConfig";
 
 const SingleRep = (props) => {
 	const [memberInfo, setMemberInfo] = useState({});
+	const [tweet, setTweet] = useState("");
 
 	useEffect(() => {
 		let mounted = true;
@@ -19,27 +20,29 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	console.log(memberInfo);
+	console.log(tweet);
 
 	return (
 		<section className="single-rep-container">
 			<h1>
 				{memberInfo.first_name} {memberInfo.last_name}
 			</h1>
-			<img
-				className="rep-img"
-				src={memberInfo.image}
-				alt={`${memberInfo.first_name} ${memberInfo.last_name}`}
-			/>
-			<div className="bottom">
+			<div className="profile-container">
 				<div className="bio-container">
-					<h3>{memberInfo.state}</h3>
-					<h3>{memberInfo.party}</h3>
-					<h4>{memberInfo.chamber}</h4>
-					<h4>{memberInfo.role}</h4>
-					<h3>{memberInfo.district && `District: ${memberInfo.district}`}</h3>
-					<p>Phone: {memberInfo.phone}</p>
-					<p>Office: {memberInfo.address}</p>
+					<img
+						className="rep-img"
+						src={memberInfo.image}
+						alt={`${memberInfo.first_name} ${memberInfo.last_name}`}
+					/>
+					<div className="bio-info">
+						<h3>{memberInfo.state}</h3>
+						<h3>{memberInfo.party}</h3>
+						<h3>{memberInfo.chamber}</h3>
+						<h4>{memberInfo.role}</h4>
+						<h4>{memberInfo.district && `District: ${memberInfo.district}`}</h4>
+						<p>Phone: {memberInfo.phone}</p>
+						<p>Office: {memberInfo.address}</p>
+					</div>
 				</div>
 				<div className="contact-container">
 					<ul>
@@ -64,15 +67,25 @@ const SingleRep = (props) => {
 							</li>
 						)}
 					</ul>
-					<form className="message-form">
+					<form
+						className="message-form"
+						onSubmit={(e) => {
+							sendTweet(APP_URL, tweet, memberInfo.twitter_handle);
+						}}>
 						<textarea
-							placeholder="Type your message here...."
+							placeholder="Type your tweet here...."
+							value={tweet}
+							onChange={(e) => setTweet(e.target.value)}
+							maxlength={
+								memberInfo.twitter_handle &&
+								280 - (memberInfo.twitter_handle.length + 1)
+							}
 							style={{
 								height: "6em",
 								resize: "none",
 								width: "inherit",
 							}}></textarea>
-						<button type="submit">Send Message</button>
+						<button type="submit">Tweet this Congress Member</button>
 					</form>
 				</div>
 			</div>
