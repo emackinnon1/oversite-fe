@@ -1,8 +1,8 @@
 nav {
-    display: flex;
-    justify-content: space-between;
-    height: 4.8vw;
-    margin-bottom: 4em;
+	display: flex;
+	justify-content: space-between;
+	height: 4.8vw;
+	margin-bottom: 4em;
 }
 
 .nav-link {
@@ -17,8 +17,8 @@ nav {
 
 .nav-links-container {
 	display: flex;
-    justify-content: space-between;
-    height: 4.8vw;
+	justify-content: space-between;
+	height: 4.8vw;
 	margin-bottom: 4em;
 	width: 50%;
 }
@@ -28,17 +28,16 @@ nav {
 	border-bottom-right-radius: 5px;
 }
 
-
 .user-avatar {
 	cursor: pointer;
 	width: 60%;
-    float: right;
-    padding: 7px;
-    margin: 5px 5px 5px 0px;
+	float: right;
+	padding: 7px;
+	margin: 5px 5px 5px 0px;
 }
 
 .avatar-container {
-	display:flex;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 8%;
@@ -50,9 +49,9 @@ nav {
 	cursor: pointer;
 	width: auto;
 	border: solid black 1px;
-	background-color: rgba(68,123,157, 0.6);
+	background-color: rgba(68, 123, 157, 0.6);
 	padding: 15px;
-    font-family: inherit;
+	font-family: inherit;
 	font-size: 14px;
 	position: absolute;
 	right: 10px;
@@ -60,4 +59,8 @@ nav {
 	z-index: 1;
 	margin-top: 50px;
 	color: white;
+}
+
+.avatar-container li {
+	list-style: none;
 }

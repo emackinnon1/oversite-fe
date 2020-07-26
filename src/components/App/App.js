@@ -21,6 +21,7 @@ const App = () => {
 		let mounted = true;
 		const getUserData = async (url) => {
 			setUserState(await getUsers(url));
+			// twitterPing();
 		};
 		if (mounted) {
 			getUserData(APP_URL);
