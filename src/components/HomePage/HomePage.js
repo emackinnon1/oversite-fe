@@ -15,13 +15,18 @@ const HomePage = () => {
 		UserContext
 	);
 
-	const [searchInput, setSearchInput] = useState("AL");
+	const [searchInput, setSearchInput] = useState("");
 	const [searchParam, setSearchParam] = useState("state");
 
 	const searchByState = async (e, stateToSearch) => {
 		e.preventDefault();
 		setResultList(await searchRepsByState(APP_URL, stateToSearch));
 	};
+
+	const checkInput = () => {
+		let error; 
+		searchInput === "" ? error = <div>Search Input empty</div> : error = ""
+	}
 
 	return (
 		<section className="home-page-container">
@@ -65,9 +70,10 @@ const HomePage = () => {
 						type="text"
 						placeholder="Search"
 						value={searchInput}
-						onChange={(e) => setSearchInput(e.target.value)}></input>
+						onChange={(e) => setSearchInput(e.target.value)}>
+					</input>
 				)}
-				<button
+				<button disabled = {searchInput === ""} 
 					type="submit"
 					className="search-btn"
 					onClick={(e) => searchByState(e, searchInput)}>
@@ -76,6 +82,7 @@ const HomePage = () => {
 					</Link>
 				</button>
 			</form>
+			{!searchInput === "" ? <div>Search Input empty</div> : ""}
 		</section>
 	);
 };
