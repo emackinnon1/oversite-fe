@@ -12,6 +12,24 @@ const ResultPage = () => {
 		UserContext
 	);
 
+	const filterResults = (filterTerm, listToFilter) => {
+		console.log("listToFilter", listToFilter);
+		if (filterTerm === "All") {
+			return listToFilter;
+		}
+		const filteredSenate = listToFilter.results[0].senate.filter(
+			(member) => member.party === filterTerm && member
+		);
+		const filteredHouse = listToFilter.results[1].house.filter(
+			(member) => member.party === filterTerm && member
+		);
+
+		console.log("filteredSenate", filteredSenate);
+		console.log("filteredHouse", filteredHouse);
+
+		return { results: [{ senate: filteredSenate }, { house: filteredHouse }] };
+	};
+
 	const makeCards = (list) => {
 		if (!list.hasOwnProperty("results")) {
 			return;
@@ -35,7 +53,9 @@ const ResultPage = () => {
 
 	return (
 		<div className="results">
-			<div className="search-results">{makeCards(resultList)}</div>
+			<div className="search-results">
+				{makeCards(filterResults(filter, resultList))}
+			</div>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
