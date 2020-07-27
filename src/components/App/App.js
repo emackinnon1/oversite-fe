@@ -1,19 +1,20 @@
 //Imports
 import React, { useEffect, useContext } from "react";
-import ResultPage from "../ResultPage/ResultPage";
-import AllReps from "../AllReps/AllReps";
+
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 
+import { APP_URL } from "../../apiConfig";
 import { getUsers } from "../../apiCalls";
 import { UserContext } from "./userContext";
+
 //Component Imports
 import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
-
-import { APP_URL } from "../../apiConfig";
-
+import ResultPage from "../ResultPage/ResultPage";
+import AllReps from "../AllReps/AllReps";
+import Error from '../Error/Error'
 const App = () => {
 	const [userState, setUserState] = useContext(UserContext);
 
@@ -34,13 +35,22 @@ const App = () => {
 			<header className="App-header"></header>
 			<NavBar />
 			<Switch>
-				<Route exact path="/" render={() => <HomePage />} />
-				<Route path="/results" render={() => <ResultPage />} />
+				<Route 
+					exact path="/" 
+					render={() => <HomePage />} 
+				/>
+				<Route 
+					exact path="/results" 
+					render={() => <ResultPage />} 
+				/>
 				<Route
-					path="/member/:id"
+					exact path="/member/:id"
 					render={({ match }) => <SingleRep id={match.params.id} />}
 				/>
-				<Route path="/all" render={() => <AllReps />} />
+				<Route exact path="/all" render={() => <AllReps />} />
+				<Route 
+					component={Error}
+				/>
 			</Switch>
 		</main>
 	);
