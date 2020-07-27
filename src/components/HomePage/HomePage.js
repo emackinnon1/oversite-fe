@@ -15,7 +15,7 @@ const HomePage = () => {
 		UserContext
 	);
 
-	const [searchInput, setSearchInput] = useState("");
+	const [searchInput, setSearchInput] = useState("AL");
 	const [searchParam, setSearchParam] = useState("state");
 
 	const searchByState = async (e, stateToSearch) => {
