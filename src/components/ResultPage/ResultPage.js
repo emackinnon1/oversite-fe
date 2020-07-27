@@ -61,7 +61,7 @@ const ResultPage = () => {
 						checked={filter === "All"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					&nbsp; All results
+					All results
 				</label>
 				<label>
 					<input
@@ -70,7 +70,7 @@ const ResultPage = () => {
 						checked={filter === "Republican"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					&nbsp; Republican
+					Republican
 				</label>
 				<label>
 					<input
@@ -79,7 +79,7 @@ const ResultPage = () => {
 						checked={filter === "Democrat"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					&nbsp; Democrat
+					Democrat
 				</label>
 				<label>
 					<input
@@ -88,10 +88,9 @@ const ResultPage = () => {
 						checked={filter === "Independent"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					&nbsp; Independent
+					Independent
 				</label>
 			</div>
-			<div className="search-results">{makeCards(resultList)}</div>
 		</div>
 	);
 };
