@@ -58,3 +58,16 @@ export const sendTweet = async (url, message, handle, e) => {
 		return false;
 	}
 };
+
+export const getMyReps = async (url) => {
+	try {
+		const fetchedData = await fetch(`${url}/users_reps/1`);
+		if (!fetchedData.ok) {
+			throw new Error();
+		}
+		const response = await fetchedData.json();
+		return response;
+	} catch (error) {
+		console.log(error);
+	}
+};
