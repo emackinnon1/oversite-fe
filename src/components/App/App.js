@@ -40,10 +40,6 @@ const App = () => {
 					render={() => <HomePage />} 
 				/>
 				<Route 
-					path='/*' 
-					render ={ () => <Error /> }
-				/>
-				<Route 
 					exact path="/results" 
 					render={() => <ResultPage />} 
 				/>
@@ -52,6 +48,9 @@ const App = () => {
 					render={({ match }) => <SingleRep id={match.params.id} />}
 				/>
 				<Route exact path="/all" render={() => <AllReps />} />
+				<Route 
+					component={Error}
+				/>
 			</Switch>
 		</main>
 	);
