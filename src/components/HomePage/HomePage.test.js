@@ -12,7 +12,6 @@ describe('HomePage Component', () => {
                 <HomePage />
             </BrowserRouter>
         )
-        debug()
    
     const title = getByText('Search for Senators and Representatives')
     expect(title).toBeInTheDocument()
