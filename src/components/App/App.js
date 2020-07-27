@@ -13,8 +13,8 @@ import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 import ResultPage from "../ResultPage/ResultPage";
-import AllReps from "../AllReps/AllReps";
-import Error from '../Error/Error'
+import MyReps from "../MyReps/MyReps";
+import Error from "../Error/Error";
 const App = () => {
 	const [userState, setUserState] = useContext(UserContext);
 
@@ -35,22 +35,15 @@ const App = () => {
 			<header className="App-header"></header>
 			<NavBar />
 			<Switch>
-				<Route 
-					exact path="/" 
-					render={() => <HomePage />} 
-				/>
-				<Route 
-					exact path="/results" 
-					render={() => <ResultPage />} 
-				/>
+				<Route exact path="/" render={() => <HomePage />} />
+				<Route exact path="/results" render={() => <ResultPage />} />
 				<Route
-					exact path="/member/:id"
+					exact
+					path="/member/:id"
 					render={({ match }) => <SingleRep id={match.params.id} />}
 				/>
-				<Route exact path="/all" render={() => <AllReps />} />
-				<Route 
-					component={Error}
-				/>
+				<Route exact path="/all" render={() => <MyReps />} />
+				<Route component={Error} />
 			</Switch>
 		</main>
 	);
