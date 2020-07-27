@@ -13,7 +13,7 @@ import HomePage from "../HomePage/HomePage";
 import NavBar from "../Navbar/Navbar";
 import SingleRep from "../SingleRep/SingleRep";
 import ResultPage from "../ResultPage/ResultPage";
-import MyReps from "../MyReps/MyReps";
+import Profile from "../Profile/Profile";
 import Error from "../Error/Error";
 const App = () => {
 	const [userState, setUserState] = useContext(UserContext);
@@ -42,7 +42,7 @@ const App = () => {
 					path="/member/:id"
 					render={({ match }) => <SingleRep id={match.params.id} />}
 				/>
-				<Route exact path="/all" render={() => <MyReps />} />
+				<Route exact path="/profile" render={() => <Profile />} />
 				<Route component={Error} />
 			</Switch>
 		</main>

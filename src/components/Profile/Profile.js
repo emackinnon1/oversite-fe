@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./MyReps.css";
+import "./Profile.css";
 import ResultCard from "../ResultCard/ResultCard";
 
-const MyReps = () => {
+const Profile = () => {
 	const [filter, setFilter] = useState("All");
 	return (
 		<div className="all-reps">
@@ -17,4 +17,4 @@ const MyReps = () => {
 	);
 };
 
-export default MyReps;
+export default Profile;
