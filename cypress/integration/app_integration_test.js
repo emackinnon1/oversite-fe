@@ -30,20 +30,6 @@ describe('Integration story for the whole app', () => {
 
 	})
 
-	describe('Search by representative name User Story', ()=>{
-
-		it('As a user I should be able to search for senator using their name', () => {
-			cy.visit('https://oversite-app.herokuapp.com/')
-			cy.get('.search-params').select('name')
-			.should('have.value', 'name')
-			cy.get('.search-input')
-			.type('Bernard Sanders')
-			.should('have.value','Bernard Sanders');
-			// the endpoint does not exist yet.
-		});
-
-
-	})
 
 
 
