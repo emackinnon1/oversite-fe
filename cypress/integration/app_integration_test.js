@@ -3,7 +3,7 @@ describe('Integration story for the whole app', () => {
 	describe('Search by State User story', () => {
 		
 			it('As a user I should be able to visit the home page and see search box with search params ', () => {
-				cy.visit('https://oversite-api.herokuapp.com/')
+				cy.visit('https://oversite-app.herokuapp.com/')
 				cy.contains('Name')
 				cy.contains('Search')
 				cy.contains('Home')
@@ -11,7 +11,7 @@ describe('Integration story for the whole app', () => {
 			});
 
 			it('As a user i should be able to pick a state and see reps for the choosen state', () => {
-				cy.visit('https://oversite-api.herokuapp.com/')
+				cy.visit('https://oversite-app.herokuapp.com/')
 				cy.get('.search-params').select('state')
 				cy.get('.state-picker-container select').select('Colorado')
 				cy.get('.search-btn').click()
@@ -33,7 +33,7 @@ describe('Integration story for the whole app', () => {
 	describe('Search by representative name User Story', ()=>{
 
 		it('As a user I should be able to search for senator using their name', () => {
-			cy.visit('https://oversite-api.herokuapp.com/')
+			cy.visit('https://oversite-app.herokuapp.com/')
 			cy.get('.search-params').select('name')
 			.should('have.value', 'name')
 			cy.get('.search-input')
