@@ -1,31 +1,51 @@
 .result-card {
-	box-shadow: -8px 8px 6px -7px rgba(69, 123, 157, 1);
+	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 	border: 0.5px solid rgba(69, 123, 157, 1);
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-start;
+  justify-content: space-between;
 	align-items: flex-start;
 	margin: 2em;
+	background-color: #1d3557;
+	width: 22em;
+	margin-right: 1em;
 }
 
 .result-card img {
-	border: red solid 1px;
+	border:  #457b9d solid 1px;
 	height: 6em;
 	margin-right: 2em;
-	width: 6em;
+	height: 6em;
+	object-fit: cover;
 }
 
 .card-info {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-end;
+	margin-right: 2em;
+  margin-top: 1em;
 }
 
-.card-info h2 {
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto&display=swap');
+.card-info h1 {
 	display: inline-block;
 	margin-bottom: auto;
+	font-family: 'PT Serif', serif;
+	font-size: 12px;
 }
 
+.rep-name {
+	font-size: 1.25em;
+	font-family: 'PT Serif', serif;
+	color: #f1faee;
+	margin-bottom: .2em;
+}
 .card-info ul {
 	display: inline-block;
-	margin: auto;
+	list-style: none;
+	font-size: .75em;
 }
+
