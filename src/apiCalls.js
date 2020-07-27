@@ -1,11 +1,11 @@
 export const getUsers = async (url) => {
 	try {
-		const fetchedData = await fetch(`${url}/users`);
+		const fetchedData = await fetch(`${url}/user/1`);
 		if (!fetchedData.ok) {
 			throw new Error();
 		}
 		const response = await fetchedData.json();
-		return response[0];
+		return response;
 	} catch (error) {
 		console.log(error);
 	}
