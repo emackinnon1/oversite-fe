@@ -15,7 +15,7 @@ const HomePage = () => {
 		UserContext
 	);
 
-	const [searchInput, setSearchInput] = useState("AL");
+	const [searchInput, setSearchInput] = useState("");
 	const [searchParam, setSearchParam] = useState("state");
 
 	const searchByState = async (e, stateToSearch) => {
@@ -40,23 +40,16 @@ const HomePage = () => {
 					<option className="search-option" value="state">
 						State
 					</option>
-					<option className="search-option" value="name">
+					<option disabled className="search-option" value="name">
 						Name
 					</option>
-					<option className="search-option" value="zip">
+					<option disabled className="search-option" value="zip">
 						Zip
 					</option>
-					<option value="committee">Committee</option>
+					<option disabled value="committee">Committee</option>
 				</select>
 				{searchParam === "state" ? (
 					<StatePicker
-						width="40%"
-						display="flex"
-						flexDirection="column"
-						height="4.8em"
-						justifyContent="space-around"
-						alignItems="center"
-						selectWidth="100%"
 						setSearchInput={setSearchInput}
 					/>
 				) : (
