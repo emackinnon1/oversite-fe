@@ -1,0 +1,32 @@
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.back-to-login-btn {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #CE2345;
+    border-radius:10px;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:2vw;
+    padding:18px 41px;
+    text-decoration:none;
+    text-shadow:0px 1px 8px #2f6627;
+}
+
+.back-to-login-btn:hover {
+    background-color: #5cbf2a;
+}
+
+.back-to-login-btn:active {
+    position:relative;
+    top:1px;
+}

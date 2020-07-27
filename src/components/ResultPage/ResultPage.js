@@ -13,7 +13,6 @@ const ResultPage = () => {
 	);
 
 	const filterResults = (filterTerm, listToFilter) => {
-		console.log("listToFilter", listToFilter);
 		if (filterTerm === "All") {
 			return listToFilter;
 		}
@@ -23,9 +22,6 @@ const ResultPage = () => {
 		const filteredHouse = listToFilter.results[1].house.filter(
 			(member) => member.party === filterTerm && member
 		);
-
-		console.log("filteredSenate", filteredSenate);
-		console.log("filteredHouse", filteredHouse);
 
 		return { results: [{ senate: filteredSenate }, { house: filteredHouse }] };
 	};
@@ -65,7 +61,7 @@ const ResultPage = () => {
 						checked={filter === "All"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					All results
+					&nbsp; All results
 				</label>
 				<label>
 					<input
@@ -74,7 +70,7 @@ const ResultPage = () => {
 						checked={filter === "Republican"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Republican
+					&nbsp; Republican
 				</label>
 				<label>
 					<input
@@ -83,7 +79,7 @@ const ResultPage = () => {
 						checked={filter === "Democrat"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Democrat
+					&nbsp; Democrat
 				</label>
 				<label>
 					<input
@@ -92,9 +88,10 @@ const ResultPage = () => {
 						checked={filter === "Independent"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Independent
+					&nbsp; Independent
 				</label>
 			</div>
+			<div className="search-results">{makeCards(resultList)}</div>
 		</div>
 	);
 };

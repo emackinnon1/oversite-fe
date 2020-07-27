@@ -12,12 +12,7 @@ const NavBar = () => {
 	return (
 		<nav>
 			<div className="nav-links-container">
-				<NavLink className="nav-link" to="/">
-					Home
-				</NavLink>
-				<NavLink className="nav-link" to="/all">
-					All Representatives
-				</NavLink>
+				<Link to='/'><img src="/images/logo.png" alt="logo" class='logo' /></Link>
 			</div>
 			<div
 				className="avatar-container"
