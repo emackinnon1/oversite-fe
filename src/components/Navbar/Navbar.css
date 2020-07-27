@@ -7,20 +7,22 @@ nav {
 
 .nav-link {
 	margin-right: 0.2em;
+	margin-top: .75em;
 	text-align: center;
-	background-color: #457b9d;
 	color: #f1faee;
 	padding: 1em;
 	font-size: 1.4vw;
 	width: 50%;
+  font-family: 'Lexend Zetta', sans-serif;
 }
 
 .nav-links-container {
 	display: flex;
 	justify-content: space-between;
 	height: 4.8vw;
-	margin-bottom: 4em;
-	width: 50%;
+	margin-top: 1em;
+	margin-bottom: 3em;
+	width: 70%;
 }
 
 .nav-links-container {
@@ -32,16 +34,18 @@ nav {
 	cursor: pointer;
 	width: 60%;
 	float: right;
-	padding: 7px;
+	padding: 5px;
 	margin: 5px 5px 5px 0px;
 }
 
 .avatar-container {
-	display: flex;
+  display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 8%;
-	background-color: #457b9d;
+	height: 150%;
+	margin-top: 1em;
+	margin-right: 1em;
 }
 
 .avatar-content {
@@ -63,4 +67,11 @@ nav {
 
 .avatar-container li {
 	list-style: none;
+}
+
+.logo {
+	width: auto;
+	height: 5em;
+	margin-right: 5px;
+	margin-left: 60px;
 }

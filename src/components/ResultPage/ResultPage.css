@@ -1,15 +1,25 @@
 .results {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-between;
 	margin: auto;
 	width: 60%;
+	align-items: center;
 }
 
 .search-results {
-	background-color: #f1faee;
 	border-radius: 5px;
 	height: 75vh;
-	overflow: scroll;
 	width: 40vw;
 }
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+	.search-results h2 {
+		color: #f1faee;
+		font-family: 'Roboto', sans-serif;
+		font-size: 30px;
+	}
+
+	.card-info li {
+		color: #f1faee;
+	}

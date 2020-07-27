@@ -24,7 +24,7 @@ const ResultPage = () => {
 		));
 
 		return (
-			<>
+			<> 
 				<h2>Senate</h2>
 				{senateCards}
 				<h2>House of Representatives</h2>
@@ -35,7 +35,7 @@ const ResultPage = () => {
 
 	return (
 		<div className="results">
-			<div className="search-results">{makeCards(resultList)}</div>
+			<h2>State</h2>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
@@ -45,7 +45,7 @@ const ResultPage = () => {
 						checked={filter === "All"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					All results
+					 &nbsp; All results
 				</label>
 				<label>
 					<input
@@ -54,7 +54,7 @@ const ResultPage = () => {
 						checked={filter === "Republican"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Republican
+					 &nbsp; Republican
 				</label>
 				<label>
 					<input
@@ -63,7 +63,7 @@ const ResultPage = () => {
 						checked={filter === "Democrat"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Democrat
+					 &nbsp; Democrat
 				</label>
 				<label>
 					<input
@@ -72,9 +72,10 @@ const ResultPage = () => {
 						checked={filter === "Independent"}
 						onChange={(e) => setFilter(e.target.value)}
 					/>
-					Independent
+					 &nbsp; Independent
 				</label>
 			</div>
+			<div className="search-results">{makeCards(resultList)}</div>
 		</div>
 	);
 };
