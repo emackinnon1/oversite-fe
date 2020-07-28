@@ -6,35 +6,21 @@ import "./Navbar.css";
 import { UserContext } from "../App/userContext";
 
 const NavBar = () => {
-	const [userState, setUserState] = useContext(UserContext);
-	const [panelState, togglePanel] = useState({ open: false });
-
 	return (
 		<nav>
 			<div className="nav-links-container">
-				<Link to='/'><img src="/images/logo.png" alt="logo" class='logo' /></Link>
+				<Link to="/">
+					<img src="/images/logo.png" alt="logo" className="logo" />
+				</Link>
 			</div>
-			<div
-				className="avatar-container"
-				onClick={(e) => togglePanel({ open: !panelState.open })}>
-				<img
-					className="user-avatar"
-					src="/images/user_icon.svg"
-					alt="profile avatar"
-				/>
-				{panelState.open && (
-					<div className="avatar-content">
-						<ul>
-							<li>
-								{userState.first_name} {userState.last_name}
-							</li>
-							<li>{userState.email}</li>
-							<li>
-								{userState.street_address}, {userState.state} {userState.zip}
-							</li>
-						</ul>
-					</div>
-				)}
+			<div className="avatar-container">
+				<Link to="/profile">
+					<img
+						className="user-avatar"
+						src="/images/user_icon.svg"
+						alt="profile avatar"
+					/>
+				</Link>
 			</div>
 		</nav>
 	);

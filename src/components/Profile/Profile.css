@@ -1,0 +1,39 @@
+.profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+	width: 70%;
+}
+
+.my-reps {
+	margin-top: 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 5px;
+	height: 75vh;
+	width: 40vw;
+}
+
+.my-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 40em;
+}
+
+.my-info div {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-top: 2em;
+	width: inherit;
+}
+
+.contact p:nth-child(2) {
+	border-left: 1px solid #a8dadc;
+	border-right: 1px solid #a8dadc;
+	padding-left: 4em;
+	padding-right: 4em;
+}

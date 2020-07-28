@@ -1,41 +1,10 @@
 import React, { useState } from "react";
+import './StatePicker.css'
 
-const StatePicker = ({
-	border,
-	width,
-	display,
-	flexDirection,
-	height,
-	justifyContent,
-	alignItems,
-	selectWidth,
-	setSearchInput,
-}) => {
+const StatePicker = ({setSearchInput,}) => {
 	return (
-		<div
-			className="state-picker-container"
-			style={{
-				border,
-				width,
-				display,
-				flexDirection,
-				height,
-				justifyContent,
-				alignItems,
-			}}>
+		<div className="state-picker-container">
 			<select
-				style={{
-					width: selectWidth,
-					height: "100%",
-					borderColor: "#457b9d",
-					borderStyle: "solid",
-					borderWidth: "3px",
-					borderRadius: "5px",
-					backgroundColor: "#f1faee",
-					fontFamily: "inherit",
-					paddingLeft: "30px",
-					fontSize: "1em",
-				}}
 				onChange={(e) => setSearchInput(e.target.value)}>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
