@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Profile.css";
 import ResultCard from "../ResultCard/ResultCard";
 import { APP_URL } from "../../apiConfig";
-import { getUsers, getMyReps } from "../../apiCalls";
+import { getUser, getMyReps } from "../../apiCalls";
 import { UserContext } from "../App/userContext";
 
 const Profile = () => {
@@ -13,7 +13,7 @@ const Profile = () => {
 	useEffect(() => {
 		let mounted = true;
 		const getUserData = async (url) => {
-			setUser(await getUsers(url));
+			setUser(await getUser(url));
 		};
 		if (mounted) {
 			getUserData(APP_URL);

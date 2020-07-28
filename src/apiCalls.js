@@ -1,4 +1,4 @@
-export const getUsers = async (url) => {
+export const getUser = async (url) => {
 	try {
 		const fetchedData = await fetch(`${url}/user/1`);
 		if (!fetchedData.ok) {
