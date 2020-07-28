@@ -66,7 +66,7 @@ const HomePage = () => {
 					onClick={(e) => searchByState(e, searchInput)}>
 					<Link
 						data-testid="search-btn"
-						to={searchParam === "state" && "/results"}>
+						to={searchParam === "state" && `/results/${searchInput}`}>
 						<img src="/images/search.svg" alt="search icon" />
 					</Link>
 				</button>

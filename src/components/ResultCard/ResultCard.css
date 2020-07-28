@@ -32,18 +32,17 @@
 
 }
 
-
 .card-info h1 {
 	display: inline-block;
 	margin-bottom: auto;
-	font-family: 'PT Serif', serif;
+	font-family: "PT Serif", serif;
 	font-size: 12px;
 	
 }
 
 .rep-name {
 	font-size: 1.25em;
-	font-family: 'PT Serif', serif;
+	font-family: "PT Serif", serif;
 	color: #f1faee;
 	margin-bottom: .2em;
 	text-decoration: none;
@@ -56,7 +55,7 @@
 }
 
 .search-results a {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .search-results a:hover {

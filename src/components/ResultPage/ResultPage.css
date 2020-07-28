@@ -8,13 +8,18 @@
 	width: 60%;
 }
 
+.results h1 {
+	margin: auto;
+	margin-bottom: 1em;
+}
+
 .search-results {
 	display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    align-items: center;
-    height: 75vh;
-    width: 100%
+	flex-direction: column;
+	border-radius: 5px;
+	align-items: center;
+	height: 75vh;
+	width: 100%;
 }
 
 .search-results h2 {
@@ -45,8 +50,8 @@
 	margin-bottom: 15px;
 }
 
-.filter label, 
-p  {
+.filter label,
+p {
 	font-size: 1.5vw;
 }
 
