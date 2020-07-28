@@ -8,7 +8,7 @@
 .single-rep-container h1 {
 	margin: 1em;
 	color: white; 
-	font-size: 2.5vw;
+	font-size: 3.5vw;
 }
 
 .profile-container {
@@ -23,6 +23,9 @@
 .rep-img {
 	width: 26%;
 	height: auto;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
 }
 
 .bio-container {
