@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import "./SingleRep.css";
 import { getMemberInfo, sendTweet } from "../../apiCalls";
 import { APP_URL } from "../../apiConfig";
+import PropTypes from 'prop-types';
 
 import ContentLoader from "react-content-loader";
 
 const SingleRep = (props) => {
+
+
 	const [memberInfo, setMemberInfo] = useState({});
 	const [tweet, setTweet] = useState("");
 	const [isSending, setIsSending] = useState(false);
@@ -133,3 +136,8 @@ const SingleRep = (props) => {
 };
 
 export default SingleRep;
+
+
+SingleRep.propTypes = {
+	id: PropTypes.string,
+}

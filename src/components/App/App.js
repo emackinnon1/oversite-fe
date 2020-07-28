@@ -1,8 +1,8 @@
 //Imports
-import React, { useEffect, useContext } from "react";
+import React from "react";
 
 import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 //Component Imports
 import HomePage from "../HomePage/HomePage";

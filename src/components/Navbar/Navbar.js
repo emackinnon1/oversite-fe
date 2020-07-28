@@ -1,9 +1,7 @@
-import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import Collapsible from "../Collapsible/Collapsible";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Navbar.css";
-import { UserContext } from "../App/userContext";
 
 const NavBar = () => {
 	return (

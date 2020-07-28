@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./StatePicker.css";
+import PropTypes from 'prop-types';
 
 const StatePicker = ({ setSearchInput }) => {
+
 	return (
 		<div className="state-picker-container">
 			<select onChange={(e) => setSearchInput(e.target.value)}>
@@ -62,3 +64,7 @@ const StatePicker = ({ setSearchInput }) => {
 };
 
 export default StatePicker;
+
+StatePicker.propTypes = {
+	setSearchInput: PropTypes.func
+}

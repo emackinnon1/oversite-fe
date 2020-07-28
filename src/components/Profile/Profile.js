@@ -19,7 +19,7 @@ const Profile = () => {
 			getUserData(APP_URL);
 		}
 		return () => (mounted = false);
-	}, []);
+	}, [setUser]);
 
 	useEffect(() => {
 		let mounted = true;
