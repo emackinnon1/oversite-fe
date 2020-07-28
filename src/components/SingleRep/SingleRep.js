@@ -26,6 +26,10 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
+	!memberInfo.twitter_handle ||
+		console.log(280 - memberInfo.twitter_handle.length);
+	console.log(tweet.length);
+
 	return (
 		<section className="single-rep-container">
 			<h1>
@@ -121,6 +125,10 @@ const SingleRep = (props) => {
 							{(isSending && !messageSuccess && "Sending...") ||
 								`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 						</button>
+						<p>
+							{tweet.length + memberInfo.twitter_handle.length + 1 === 280 &&
+								"Character limit reached!"}
+						</p>
 					</form>
 				</div>
 			)}
