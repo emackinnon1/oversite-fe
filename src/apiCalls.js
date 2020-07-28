@@ -31,6 +31,7 @@ export const getMemberInfo = async (url, id) => {
 			throw new Error();
 		}
 		const response = await fetchedData.json();
+		console.log(response.results);
 		return response.results;
 	} catch (error) {
 		console.log(error);

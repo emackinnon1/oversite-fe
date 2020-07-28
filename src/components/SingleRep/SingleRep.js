@@ -22,8 +22,6 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	console.log(isLoading, messageSuccess);
-
 	return (
 		<section className="single-rep-container">
 			<h1>
@@ -101,7 +99,7 @@ const SingleRep = (props) => {
 							resize: "none",
 							width: "inherit",
 						}}></textarea>
-					<button type="submit" disable={isLoading && "disabled"}>
+					<button type="submit" disabled={isLoading && "disabled"}>
 						{(isLoading && !messageSuccess && "Sending...") ||
 							`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 					</button>

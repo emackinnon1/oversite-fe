@@ -46,12 +46,12 @@ const HomePage = () => {
 					<option disabled className="search-option" value="zip">
 						Zip
 					</option>
-					<option disabled value="committee">Committee</option>
+					<option disabled value="committee">
+						Committee
+					</option>
 				</select>
 				{searchParam === "state" ? (
-					<StatePicker
-						setSearchInput={setSearchInput}
-					/>
+					<StatePicker setSearchInput={setSearchInput} />
 				) : (
 					<input
 						className="search-input"
@@ -64,7 +64,9 @@ const HomePage = () => {
 					type="submit"
 					className="search-btn"
 					onClick={(e) => searchByState(e, searchInput)}>
-					<Link to={searchParam === "state" && "/results"}>
+					<Link
+						data-testid="search-btn"
+						to={searchParam === "state" && "/results"}>
 						<img src="/images/search.svg" alt="search icon" />
 					</Link>
 				</button>
