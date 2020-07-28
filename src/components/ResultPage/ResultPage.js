@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext, Component } from "react";
+import React, { useState, useContext} from "react";
 import ResultCard from "../ResultCard/ResultCard";
-import { searchRepsByState } from "../../apiCalls";
+
+
 import "./ResultPage.css";
 import { UserContext } from "../App/userContext";
 
 import ContentLoader from 'react-content-loader'
 
-import { APP_URL } from "../../apiConfig";
 
 const ResultPage = () => {
 	const [filter, setFilter] = useState("All");
@@ -49,7 +49,6 @@ const ResultPage = () => {
 	};
 
 	return (
-		// this is a placeholder for the loading Component
 		<>
 			{!Object.keys(resultList).length ? <Loading  /> : 
 		<div className="results">
