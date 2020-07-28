@@ -66,6 +66,7 @@ const ResultPage = ({ stateToSearch }) => {
 				<Loading />
 			) : (
 				<div className="results">
+					<h1>{stateToSearch} Search Results</h1>
 					<div className="filter">
 						<p>Filter results:</p>
 						<label>
