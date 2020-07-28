@@ -1,19 +1,31 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ResultCard from "../ResultCard/ResultCard";
-
-
 import "./ResultPage.css";
 import { UserContext } from "../App/userContext";
+import { APP_URL } from "../../apiConfig";
+import ContentLoader from "react-content-loader";
+import { searchRepsByState } from "../../apiCalls";
 
-import ContentLoader from 'react-content-loader'
-
-
-const ResultPage = () => {
+const ResultPage = ({ stateToSearch }) => {
 	const [filter, setFilter] = useState("All");
+	const [userState, setUserState, resultList, setResultList] = useContext(
+		UserContext
+	);
+	const Loading = () => <ContentLoader />;
 
-	const [userState, setUserState, resultList, setResultList] = useContext(UserContext);
-	
-	const Loading = () => <ContentLoader />
+	useEffect(() => {
+		if (!resultList.hasOwnProperty("results")) {
+			let mounted = true;
+			const getUserData = async (url, state) => {
+				setResultList(await searchRepsByState(url, state));
+			};
+			if (mounted) {
+				getUserData(APP_URL, stateToSearch);
+			}
+			return () => (mounted = false);
+		}
+	}, []);
+
 	const filterResults = (filterTerm, listToFilter) => {
 		if (filterTerm === "All") {
 			return listToFilter;
@@ -50,52 +62,54 @@ const ResultPage = () => {
 
 	return (
 		<>
-			{!Object.keys(resultList).length ? <Loading  /> : 
-		<div className="results">
-			<div className="filter">
-				<p>Filter results:</p>
-				<label>
-					<input
-						type="radio"
-						value="All"
-						checked={filter === "All"}
-						onChange={(e) => setFilter(e.target.value)}
-					/>
-					All results
-				</label>
-				<label>
-					<input
-						type="radio"
-						value="Republican"
-						checked={filter === "Republican"}
-						onChange={(e) => setFilter(e.target.value)}
-					/>
-					Republican
-				</label>
-				<label>
-					<input
-						type="radio"
-						value="Democrat"
-						checked={filter === "Democrat"}
-						onChange={(e) => setFilter(e.target.value)}
-					/>
-					Democrat
-				</label>
-				<label>
-					<input
-						type="radio"
-						value="Independent"
-						checked={filter === "Independent"}
-						onChange={(e) => setFilter(e.target.value)}
-					/>
-					Independent
-				</label>
-			</div>
-			<div className="search-results">
-				{makeCards(filterResults(filter, resultList))}
-			</div>
-		</div>
-}
+			{!Object.keys(resultList).length ? (
+				<Loading />
+			) : (
+				<div className="results">
+					<div className="filter">
+						<p>Filter results:</p>
+						<label>
+							<input
+								type="radio"
+								value="All"
+								checked={filter === "All"}
+								onChange={(e) => setFilter(e.target.value)}
+							/>
+							All results
+						</label>
+						<label>
+							<input
+								type="radio"
+								value="Republican"
+								checked={filter === "Republican"}
+								onChange={(e) => setFilter(e.target.value)}
+							/>
+							Republican
+						</label>
+						<label>
+							<input
+								type="radio"
+								value="Democrat"
+								checked={filter === "Democrat"}
+								onChange={(e) => setFilter(e.target.value)}
+							/>
+							Democrat
+						</label>
+						<label>
+							<input
+								type="radio"
+								value="Independent"
+								checked={filter === "Independent"}
+								onChange={(e) => setFilter(e.target.value)}
+							/>
+							Independent
+						</label>
+					</div>
+					<div className="search-results">
+						{makeCards(filterResults(filter, resultList))}
+					</div>
+				</div>
+			)}
 		</>
 	);
 };

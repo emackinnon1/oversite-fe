@@ -212,8 +212,10 @@ describe("App", () => {
 				"thisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmess";
 
 			expect(tweetBtn).toBeInTheDocument();
-			fireEvent.change(getByTestId("twitter-msg"), {
-				target: { value: longMessage },
+			await act(async () => {
+				fireEvent.change(getByTestId("twitter-msg"), {
+					target: { value: longMessage },
+				});
 			});
 
 			expect(getByText("Character limit reached!")).toBeInTheDocument();

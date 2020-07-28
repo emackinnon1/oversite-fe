@@ -19,7 +19,13 @@ const App = () => {
 			<NavBar />
 			<Switch>
 				<Route exact path="/" render={() => <HomePage />} />
-				<Route exact path="/results" render={() => <ResultPage />} />
+				<Route
+					exact
+					path="/results/:state"
+					render={({ match }) => (
+						<ResultPage stateToSearch={match.params.state} />
+					)}
+				/>
 				<Route
 					exact
 					path="/member/:id"
