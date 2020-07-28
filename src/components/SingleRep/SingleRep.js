@@ -117,8 +117,8 @@ const SingleRep = (props) => {
 						<button
 							alt="tweet-btn"
 							type="submit"
-							disabled={isLoading && "disabled"}>
-							{(isLoading && !messageSuccess && "Sending...") ||
+							disabled={isSending && "disabled"}>
+							{(isSending && !messageSuccess && "Sending...") ||
 								`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 						</button>
 					</form>
