@@ -7,14 +7,13 @@
 	margin: 2em;
 	background-color: #1d3557;
 	width: 41vw;
-	margin-right: 1em;
 }
 
 .result-card img {
 	border:  #457b9d solid 1px;
-	height: 6em;
+	width: 20%;
+	height: auto;
 	margin-right: 2em;
-	height: 6em;
 	object-fit: cover;
 }
 
@@ -22,8 +21,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	margin-right: 2em;
-  margin-top: 1em;
 }
 
 .card-info h3 {
