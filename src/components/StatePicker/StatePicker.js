@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import './StatePicker.css'
+import "./StatePicker.css";
 
-const StatePicker = ({setSearchInput,}) => {
+const StatePicker = ({ setSearchInput }) => {
 	return (
 		<div className="state-picker-container">
-			<select
-				onChange={(e) => setSearchInput(e.target.value)}>
+			<select onChange={(e) => setSearchInput(e.target.value)}>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
 				<option value="AZ">Arizona</option>
