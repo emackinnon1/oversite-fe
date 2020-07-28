@@ -16,6 +16,10 @@
 	width: 40vw;
 }
 
+.my-reps h2 {
+	font-size: 1.4em;
+}
+
 .my-info {
 	display: flex;
 	flex-direction: column;
@@ -28,13 +32,18 @@
 	flex-direction: row;
 	justify-content: space-between;
 	margin-top: 2em;
-	width: inherit;
+	width: 100%;
 	border: .1px solid #a8dadc;
 	padding: 10px;
 }
 
+.my-info h1 {
+	font-size: 4vw;
+}
+
 .my-info h2 {
 	margin-top: 40px;
+	font-size: 3vw;
 }
 
 .contact p:nth-child(2) {
