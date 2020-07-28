@@ -20,10 +20,6 @@ jest.mock("../../apiCalls");
 
 describe("App", () => {
 	describe("integration tests", () => {
-		beforeEach(() => {
-			searchRepsByState.mockResolvedValue(mockMemberListResponse);
-		});
-
 		it("should pull up a list of reps upon clicking search", async () => {
 			const { getByTestId, getByText, debug } = render(
 				<MemoryRouter>
@@ -33,6 +29,7 @@ describe("App", () => {
 				</MemoryRouter>
 			);
 
+			searchRepsByState.mockResolvedValue(mockMemberListResponse);
 			fireEvent.click(getByTestId("search-btn"));
 			const firstCard = await waitFor(() =>
 				getByText("Doug", { exact: false })
@@ -50,6 +47,7 @@ describe("App", () => {
 				</MemoryRouter>
 			);
 
+			searchRepsByState.mockResolvedValue(mockMemberListResponse);
 			fireEvent.click(getByTestId("search-btn"));
 			const firstCard = await waitFor(() =>
 				getByText("Doug", { exact: false })
@@ -80,6 +78,7 @@ describe("App", () => {
 				</MemoryRouter>
 			);
 
+			searchRepsByState.mockResolvedValue(mockMemberListResponse);
 			fireEvent.click(getByTestId("search-btn"));
 			const firstCard = await waitFor(() =>
 				getByText("Doug", { exact: false })
@@ -93,16 +92,8 @@ describe("App", () => {
 			expect(queryByText("Richard", { exact: false })).toBeNull();
 		});
 
-		it("should show a user's profile page", async () => {
-			const {
-				getAllByTestId,
-				getByTestId,
-				getByAltText,
-				getByText,
-				getAllByText,
-				debug,
-				queryByText,
-			} = render(
+		it("should show a user's profile page with user info and local reps", async () => {
+			const { getByAltText, getByText } = render(
 				<MemoryRouter>
 					<UserProvider>
 						<App />
@@ -123,6 +114,31 @@ describe("App", () => {
 
 			const firstCard = getByText("Doug", { exact: false });
 			expect(firstCard).toBeInTheDocument();
+		});
+
+		it("should take user back to home page when the logo is clicked", async () => {
+			const { getByAltText, getByText, debug, getByTestId } = render(
+				<MemoryRouter>
+					<UserProvider>
+						<App />
+					</UserProvider>
+				</MemoryRouter>
+			);
+
+			const profileBtn = getByAltText("profile avatar");
+			expect(profileBtn).toBeInTheDocument();
+
+			getUser.mockResolvedValue(mockUser);
+			getMyReps.mockResolvedValue(mockMemberListResponse);
+
+			fireEvent.click(profileBtn);
+
+			const email = await waitFor(() => getByText("steve@example.com"));
+
+			const logo = getByAltText("logo");
+			fireEvent.click(logo);
+
+			expect(getByTestId("search-btn")).toBeInTheDocument();
 		});
 	});
 });

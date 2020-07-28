@@ -1,7 +1,14 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { render, getByText } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import Navbar from "./Navbar";
 
 test("dummy test", () => {
-	expect(true).toEqual(true);
+	const { getByAltText } = render(
+		<MemoryRouter>
+			<Navbar />
+		</MemoryRouter>
+	);
+
+	expect(getByAltText("logo")).toBeInTheDocument();
 });
