@@ -29,6 +29,12 @@
 	justify-content: space-between;
 	margin-top: 2em;
 	width: inherit;
+	border: .1px solid #a8dadc;
+	padding: 10px;
+}
+
+.my-info h2 {
+	margin-top: 40px;
 }
 
 .contact p:nth-child(2) {
