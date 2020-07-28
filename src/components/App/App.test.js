@@ -174,8 +174,8 @@ describe("App", () => {
 			});
 
 			await act(async () => fireEvent.submit(tweetBtn));
-			const sendingMsg = getByText("Sending...");
 			sendTweet.mockResolvedValue(true);
+			const sendingMsg = await waitFor(() => getByText("Sending..."));
 			expect(sendingMsg).toBeInTheDocument();
 			expect(tweetBtn).toBeInTheDocument();
 		});
