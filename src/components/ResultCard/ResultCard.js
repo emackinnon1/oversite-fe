@@ -22,7 +22,6 @@ const ResultCard = (props) => {
 					</h3>
 					<ul>
 						<li>{props.role}</li>
-						<li>{props.state}</li>
 						<li>
 							{(props.party === "Democrat" && (
 								<i className="fas fa-democrat"></i>
