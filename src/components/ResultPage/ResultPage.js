@@ -42,7 +42,7 @@ const ResultPage = () => {
 				<h2>Senate</h2>
 				{!senateCards.length ? <p>No Senators Found</p> : senateCards}
 				<h2>House of Representatives</h2>
-				{!houseCards.length ? <p>No No House Members Found</p> : houseCards}
+				{!houseCards.length ? <p>No House Members Found</p> : houseCards}
 			</>
 		);
 	};
