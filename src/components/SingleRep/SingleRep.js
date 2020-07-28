@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRep.css";
 import { getMemberInfo, sendTweet } from "../../apiCalls";
-import Collapsible from "../Collapsible/Collapsible";
 import { APP_URL } from "../../apiConfig";
+
+import ContentLoader from 'react-content-loader'
 
 const SingleRep = (props) => {
 	const [memberInfo, setMemberInfo] = useState({});
 	const [tweet, setTweet] = useState("");
-	const [isLoading, setIsLoading] = useState(false);
+	const [isSending, setIsSending] = useState(false);
+	const [isLoading, setIsLoading] = useState(true)
 	const [messageSuccess, setMessageSucces] = useState(false);
+	console.log("Member info", memberInfo)
+	const Loading = () => <ContentLoader />
 
 	useEffect(() => {
 		let mounted = true;
 		const getData = async (url, id) => {
 			const member = await getMemberInfo(url, id);
 			setMemberInfo(member[0]);
+			setIsLoading(false)
 		};
 		if (mounted) {
 			getData(APP_URL, props.id);
@@ -22,13 +27,16 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	return (
+
+	return ( 
 		<section className="single-rep-container">
 			<h1>
 				{memberInfo.first_name} {memberInfo.last_name}
 			</h1>
+			{isLoading ? <Loading style={{textAlign: "center"}}/> :
 			<div className="profile-container">
 				<div className="bio-container">
+					
 					<img
 						className="rep-img"
 						src={memberInfo.image}
@@ -40,38 +48,49 @@ const SingleRep = (props) => {
 						<h3>{memberInfo.chamber}</h3>
 						<h4>{memberInfo.role}</h4>
 						<h4>{memberInfo.district && `District: ${memberInfo.district}`}</h4>
-						<p>Phone: {memberInfo.phone}</p>
-						<p>Office: {memberInfo.address}</p>
+						<p>{memberInfo.phone}</p>
+						<p>{memberInfo.address}</p>
 						<ul>
 							{memberInfo.contact_form_url && (
 								<li>
-									<a href={memberInfo.contact_form_url}>
-										<img
+									<a className="link-icon" href={memberInfo.contact_form_url}>
+										<img 
+											
 											src="/images/contact_form_icon.svg"
 											alt="contact form"
 										/>
 									</a>
+									<span className ="link-discription">Contact</span>
 								</li>
 							)}
 							{memberInfo.facebook && (
 								<li>
-									<a href={memberInfo.facebook}>
-										<img src="/images/facebook_icon.svg" alt="facebook" />
+									<a className="link-icon" href={memberInfo.facebook}>
+										<img 
+											src="/images/facebook_icon.svg" 
+											alt="facebook" />
 									</a>
+									<span className ="link-discription">Facebook</span>
 								</li>
 							)}
 							{memberInfo.twitter_url && (
 								<li>
-									<a href={memberInfo.twitter_url}>
-										<img src="/images/logo_icon.svg" alt="twitter" />
+									<a className="link-icon" href={memberInfo.twitter_url}>
+										<img 
+											src="/images/logo_icon.svg" 
+											alt="twitter" />
 									</a>
+									<span className ="link-discription">Twitter</span>
 								</li>
 							)}
 							{memberInfo.youtube && (
 								<li>
-									<a href={memberInfo.youtube}>
-										<img src="/images/youtube_icon.svg" alt="youtube" />
+									<a className="link-icon"  href={memberInfo.youtube}>
+										<img 
+											src="/images/youtube_icon.svg" 
+											alt="youtube" />
 									</a>
+									<span className ="link-discription">YouTube</span>
 								</li>
 							)}
 						</ul>
@@ -80,7 +99,7 @@ const SingleRep = (props) => {
 				<form
 					className="message-form"
 					onSubmit={async (e) => {
-						setIsLoading(true);
+						setIsSending(true);
 						setMessageSucces(
 							await sendTweet(APP_URL, tweet, memberInfo.twitter_handle, e)
 						);
@@ -96,9 +115,10 @@ const SingleRep = (props) => {
 							280 - (memberInfo.twitter_handle.length + 1)
 						}
 						style={{
-							height: "8em",
+							height: "3em",
 							resize: "none",
-							width: "inherit",
+							width: "65%",
+							padding: ".8em"
 						}}></textarea>
 					<button
 						alt="tweet-btn"
@@ -108,9 +128,12 @@ const SingleRep = (props) => {
 							`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 					</button>
 				</form>
+			
 			</div>
+			}	
 		</section>
 	);
+					
 };
 
 export default SingleRep;

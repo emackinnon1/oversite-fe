@@ -1,49 +1,87 @@
 .single-rep-container {
 	align-items: center;
-	background-color: #f1faee;
-	border-radius: 0.5%;
 	display: flex;
 	flex-direction: column;
-	height: 65vh;
-	justify-content: space-around;
-	position: relative;
-	padding: 2em;
-	margin: auto;
-	width: 50%;
+	width: 100%;
 }
 
 .single-rep-container h1 {
 	margin: 1em;
+	color: white; 
+	font-size: 3.5vw;
 }
 
 .profile-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	width: 75%;
+	max-width: 60%;
+	min-width: 20%;
+	color: white;
+	/* border: solid green 1px; */
 }
 
 .rep-img {
-	width: auto;
-	height: 15em;
+	width: 26%;
+	height: auto;
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
+	box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.39);
 }
 
 .bio-container {
 	display: flex;
 	flex-direction: row;
+	/* border: solid 1px white; */
+	width: 100%;
+	justify-content: space-evenly;
 }
 
 .bio-container h3,
 .bio-container h4,
 .bio-container p {
 	display: inline-block;
-	padding-bottom: 0.2em;
+	font-size: 1.8vw;
+	width: 100%;
+	/* border: solid red 1px; */
 }
 
 .bio-info {
 	display: flex;
 	flex-direction: column;
 	margin-left: 2em;
+	justify-content: space-between;
+	/* border: rgb(151, 147, 147) solid 1px; */
+}
+
+.bio-info li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* border: solid red 1px; */
+	position: relative;
+	z-index: 4;
+}
+
+
+.bio-info a {
+	margin-bottom: -10px;
+}
+
+.link-discription {
+	display: none;
+	position: absolute;
+	top: 48px;
+	left: 6px;
+	z-index: 1;
+	font-size: 0.6em;
+}
+
+.link-icon:hover {
+	transform: scale(1.2);
+}
+
+.link-icon:hover + .link-discription {
+	display: block;
 }
 
 .media-links-msg-input {
@@ -54,26 +92,31 @@
 }
 
 .message-form {
-	align-items: center;
+	align-items: flex-end;
 	display: flex;
 	flex-direction: column;
-	height: 50%;
-	justify-content: center;
 	margin-top: 1em;
 	width: 100%;
+	/* border: solid black 1px; */
 }
 
 .message-form textarea {
 	box-shadow: -8px 8px 10px -11px rgba(69, 123, 157, 1);
+	border-radius: 10px;
+	background-color: #F4F7FB;
+	margin-top: 10px;
 }
 
 textarea::placeholder {
 	text-align: center;
+
 }
 
 .message-form button {
 	cursor: pointer;
-	margin-top: 2em;
+	border-radius: 10px;
+	border-color: #457b9d;
+	margin-top: 1em;
 	padding: 0.7em;
 	background-color: #457b9d;
 	color: #f1faee;
@@ -88,17 +131,12 @@ textarea::placeholder {
 .bio-info ul {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 	list-style-type: none;
+	margin-top: 10px;
+	/* border: solid purple 1px; */
 }
 
-.bio-info li {
-	background-color: #457b9d;
-	border-radius: 25%;
-	color: #f1faee;
-	text-align: center;
-	margin: 0.5em;
-	width: 3em;
-}
 
 .bio-info img {
 	height: inherit;
@@ -109,3 +147,4 @@ textarea::placeholder {
 .contact-container a {
 	color: #f1faee;
 }
+
