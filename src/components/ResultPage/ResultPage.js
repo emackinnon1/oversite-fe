@@ -1,17 +1,19 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext} from "react";
 import ResultCard from "../ResultCard/ResultCard";
-import { searchRepsByState } from "../../apiCalls";
+
+
 import "./ResultPage.css";
 import { UserContext } from "../App/userContext";
 
-import { APP_URL } from "../../apiConfig";
+import ContentLoader from 'react-content-loader'
+
 
 const ResultPage = () => {
 	const [filter, setFilter] = useState("All");
-	const [userState, setUserState, resultList, setResultList] = useContext(
-		UserContext
-	);
 
+	const [userState, setUserState, resultList, setResultList] = useContext(UserContext);
+	
+	const Loading = () => <ContentLoader />
 	const filterResults = (filterTerm, listToFilter) => {
 		if (filterTerm === "All") {
 			return listToFilter;
@@ -36,22 +38,20 @@ const ResultPage = () => {
 		const houseCards = list.results[1].house.map((rep) => (
 			<ResultCard {...rep} key={rep.id} />
 		));
-
 		return (
 			<>
 				<h2>Senate</h2>
-				{senateCards}
+				{!senateCards.length ? <p>No Senators Found</p> : senateCards}
 				<h2>House of Representatives</h2>
-				{houseCards}
+				{!houseCards.length ? <p>No House Members Found</p> : houseCards}
 			</>
 		);
 	};
 
 	return (
+		<>
+			{!Object.keys(resultList).length ? <Loading  /> : 
 		<div className="results">
-			<div className="search-results">
-				{makeCards(filterResults(filter, resultList))}
-			</div>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
@@ -91,7 +91,12 @@ const ResultPage = () => {
 					Independent
 				</label>
 			</div>
+			<div className="search-results">
+				{makeCards(filterResults(filter, resultList))}
+			</div>
 		</div>
+}
+		</>
 	);
 };
 
