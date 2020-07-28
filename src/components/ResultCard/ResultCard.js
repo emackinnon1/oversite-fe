@@ -3,16 +3,19 @@ import { Link } from "react-router-dom";
 import "./ResultCard.css";
 
 const ResultCard = (props) => {
-	console.log(props);
 	const setDefaultUrl = (e) => {
-		e.target.src = '/images/image-not-found.png'
-	}
+		e.target.src = "/images/image-not-found.png";
+	};
 
 	return (
 		<Link data-testid="card-link" to={`/member/${props.id}`}>
 			<div className="result-card">
-				<img src={props.image}
-				onError={setDefaultUrl} alt="headshot" class="rep-photo" />
+				<img
+					src={props.image}
+					onError={setDefaultUrl}
+					alt="headshot"
+					className="rep-photo"
+				/>
 				<div className="card-info">
 					<h3 className="rep-name">
 						{props.first_name} {props.last_name}

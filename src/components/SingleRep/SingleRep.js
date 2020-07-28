@@ -121,6 +121,10 @@ const SingleRep = (props) => {
 							{(isSending && !messageSuccess && "Sending...") ||
 								`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 						</button>
+						<p>
+							{tweet.length + memberInfo.twitter_handle.length + 1 === 280 &&
+								"Character limit reached!"}
+						</p>
 					</form>
 				</div>
 			)}
