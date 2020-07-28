@@ -22,7 +22,6 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	console.log(isLoading, messageSuccess);
 
 	return (
 		<section className="single-rep-container">
@@ -42,38 +41,49 @@ const SingleRep = (props) => {
 						<h3>{memberInfo.chamber}</h3>
 						<h4>{memberInfo.role}</h4>
 						<h4>{memberInfo.district && `District: ${memberInfo.district}`}</h4>
-						<p>Phone: {memberInfo.phone}</p>
-						<p>Office: {memberInfo.address}</p>
+						<p>{memberInfo.phone}</p>
+						<p>{memberInfo.address}</p>
 						<ul>
 							{memberInfo.contact_form_url && (
 								<li>
-									<a href={memberInfo.contact_form_url}>
-										<img
+									<a className="link-icon" href={memberInfo.contact_form_url}>
+										<img 
+											
 											src="/images/contact_form_icon.svg"
 											alt="contact form"
 										/>
 									</a>
+									<span className ="link-discription">Contact</span>
 								</li>
 							)}
 							{memberInfo.facebook && (
 								<li>
-									<a href={memberInfo.facebook}>
-										<img src="/images/facebook_icon.svg" alt="facebook" />
+									<a className="link-icon" href={memberInfo.facebook}>
+										<img 
+											src="/images/facebook_icon.svg" 
+											alt="facebook" />
 									</a>
+									<span className ="link-discription">Facebook</span>
 								</li>
 							)}
 							{memberInfo.twitter_url && (
 								<li>
-									<a href={memberInfo.twitter_url}>
-										<img src="/images/logo_icon.svg" alt="twitter" />
+									<a className="link-icon" href={memberInfo.twitter_url}>
+										<img 
+											src="/images/logo_icon.svg" 
+											alt="twitter" />
 									</a>
+									<span className ="link-discription">Twitter</span>
 								</li>
 							)}
 							{memberInfo.youtube && (
 								<li>
-									<a href={memberInfo.youtube}>
-										<img src="/images/youtube_icon.svg" alt="youtube" />
+									<a className="link-icon"  href={memberInfo.youtube}>
+										<img 
+											src="/images/youtube_icon.svg" 
+											alt="youtube" />
 									</a>
+									<span className ="link-discription">YouTube</span>
 								</li>
 							)}
 						</ul>
@@ -97,9 +107,10 @@ const SingleRep = (props) => {
 							280 - (memberInfo.twitter_handle.length + 1)
 						}
 						style={{
-							height: "8em",
+							height: "3em",
 							resize: "none",
-							width: "inherit",
+							width: "65%",
+							padding: ".8em"
 						}}></textarea>
 					<button type="submit" disable={isLoading && "disabled"}>
 						{(isLoading && !messageSuccess && "Sending...") ||
