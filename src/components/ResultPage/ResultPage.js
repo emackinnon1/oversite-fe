@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, Component } from "react";
 import ResultCard from "../ResultCard/ResultCard";
 import { searchRepsByState } from "../../apiCalls";
 import "./ResultPage.css";
@@ -8,10 +8,11 @@ import { APP_URL } from "../../apiConfig";
 
 const ResultPage = () => {
 	const [filter, setFilter] = useState("All");
+
 	const [userState, setUserState, resultList, setResultList] = useContext(
 		UserContext
 	);
-
+		console.log(resultList);
 	const filterResults = (filterTerm, listToFilter) => {
 		if (filterTerm === "All") {
 			return listToFilter;
@@ -36,22 +37,21 @@ const ResultPage = () => {
 		const houseCards = list.results[1].house.map((rep) => (
 			<ResultCard {...rep} key={rep.id} />
 		));
-
 		return (
 			<>
 				<h2>Senate</h2>
-				{senateCards}
+				{!senateCards.length ? <p>No Senators Found</p> : senateCards}
 				<h2>House of Representatives</h2>
-				{houseCards}
+				{!houseCards.length ? <p>No No House Members Found</p> : houseCards}
 			</>
 		);
 	};
 
 	return (
+		// this is a placeholder for the loading Component
+		<>
+			{!Object.keys(resultList).length ? <p>Loading</p> : 
 		<div className="results">
-			<div className="search-results">
-				{makeCards(filterResults(filter, resultList))}
-			</div>
 			<div className="filter">
 				<p>Filter results:</p>
 				<label>
@@ -91,7 +91,12 @@ const ResultPage = () => {
 					Independent
 				</label>
 			</div>
+			<div className="search-results">
+				{makeCards(filterResults(filter, resultList))}
+			</div>
 		</div>
+}
+		</>
 	);
 };
 

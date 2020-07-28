@@ -1,7 +1,4 @@
 .result-card {
-	-webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
-  box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
 	border: 0.5px solid rgba(69, 123, 157, 1);
 	display: flex;
 	flex-direction: row;
@@ -9,7 +6,7 @@
 	align-items: flex-start;
 	margin: 2em;
 	background-color: #1d3557;
-	width: 22em;
+	width: 41vw;
 	margin-right: 1em;
 }
 
@@ -29,7 +26,15 @@
   margin-top: 1em;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto&display=swap');
+.card-info h3 {
+	font-size: 2.5vw;
+}
+
+.card-info li {
+	font-size: 1.8vw;
+}
+
+
 .card-info h1 {
 	display: inline-block;
 	margin-bottom: auto;
@@ -49,3 +54,11 @@
 	font-size: .75em;
 }
 
+.search-results a {
+    text-decoration: none;
+}
+
+.search-results a:hover {
+	transform: scale(1.05);
+	transition: transform 3s;
+}
