@@ -59,3 +59,14 @@ export const mockSingleMemberResponse = [
 		youtube: null,
 	},
 ];
+
+export const mockUser = {
+	district: 7,
+	email: "steve@example.com",
+	first_name: "Steven",
+	id: 1,
+	last_name: "Meyers",
+	state: "CO",
+	street_address: "1625 Fenton St",
+	zip: "80214",
+};
