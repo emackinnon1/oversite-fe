@@ -26,6 +26,10 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
+	const setDefaultUrl = (e) => {
+		e.target.src = '/images/image-not-found.png'
+	}
+
 	return (
 		<section className="single-rep-container">
 			<h1>
@@ -37,6 +41,7 @@ const SingleRep = (props) => {
 				<div className="profile-container">
 					<div className="bio-container">
 						<img
+							onError={setDefaultUrl}
 							className="rep-img"
 							src={memberInfo.image}
 							alt={`${memberInfo.first_name} ${memberInfo.last_name}`}

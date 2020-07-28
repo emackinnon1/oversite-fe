@@ -66,6 +66,7 @@ const Profile = () => {
 					</p>
 					<p>District {user.district}</p>
 				</div>
+				<h2>My Representatives</h2>
 			</div>
 			<div className="my-reps">{makeCards(myReps)}</div>
 		</div>

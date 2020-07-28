@@ -10,8 +10,8 @@
 }
 
 .result-card img {
-	border: #457b9d solid 1px;
-	width: 23%;
+	border:  #457b9d solid 1px;
+	width: 25%;
 	height: auto;
 	margin-right: 2em;
 	object-fit: cover;
@@ -29,6 +29,7 @@
 
 .card-info li {
 	font-size: 1.8vw;
+
 }
 
 .card-info h1 {
@@ -36,18 +37,21 @@
 	margin-bottom: auto;
 	font-family: "PT Serif", serif;
 	font-size: 12px;
+	
 }
 
 .rep-name {
 	font-size: 1.25em;
 	font-family: "PT Serif", serif;
 	color: #f1faee;
-	margin-bottom: 0.2em;
+	margin-bottom: .2em;
+	text-decoration: none;
 }
 .card-info ul {
 	display: inline-block;
 	list-style: none;
-	font-size: 0.75em;
+	font-size: .75em;
+	text-decoration: none;
 }
 
 .search-results a {
