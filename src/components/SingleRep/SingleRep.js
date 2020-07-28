@@ -87,6 +87,7 @@ const SingleRep = (props) => {
 						setTweet("");
 					}}>
 					<textarea
+						data-testid="twitter-msg"
 						placeholder="Type your tweet here...."
 						value={tweet}
 						onChange={(e) => setTweet(e.target.value)}
@@ -99,7 +100,10 @@ const SingleRep = (props) => {
 							resize: "none",
 							width: "inherit",
 						}}></textarea>
-					<button type="submit" disabled={isLoading && "disabled"}>
+					<button
+						alt="tweet-btn"
+						type="submit"
+						disabled={isLoading && "disabled"}>
 						{(isLoading && !messageSuccess && "Sending...") ||
 							`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 					</button>

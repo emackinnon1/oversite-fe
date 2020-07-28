@@ -1,6 +1,6 @@
 import React from "react";
 import App from "./App";
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor, act } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import {
@@ -13,6 +13,7 @@ import {
 	getMemberInfo,
 	getUser,
 	getMyReps,
+	sendTweet,
 } from "../../apiCalls";
 import { UserProvider } from "./userContext";
 
@@ -138,6 +139,45 @@ describe("App", () => {
 			fireEvent.click(logo);
 
 			expect(getByTestId("search-btn")).toBeInTheDocument();
+		});
+
+		it("should let the user know a tweet has sent", async () => {
+			const {
+				getByAltText,
+				getAllByTestId,
+				getByTestId,
+				getByText,
+				debug,
+			} = render(
+				<MemoryRouter>
+					<UserProvider>
+						<App />
+					</UserProvider>
+				</MemoryRouter>
+			);
+
+			searchRepsByState.mockResolvedValue(mockMemberListResponse);
+			fireEvent.click(getByTestId("search-btn"));
+			const firstCard = await waitFor(() =>
+				getByText("Doug", { exact: false })
+			);
+
+			getMemberInfo.mockResolvedValue(mockSingleMemberResponse);
+			fireEvent.click(getAllByTestId("card-link")[0]);
+
+			const tweetBtn = await waitFor(() =>
+				getByText("Tweet Doug Jones", { exact: false })
+			);
+			expect(tweetBtn).toBeInTheDocument();
+			fireEvent.change(getByTestId("twitter-msg"), {
+				target: { value: "I love you, Doug" },
+			});
+
+			await act(async () => fireEvent.submit(tweetBtn));
+			const sendingMsg = getByText("Sending...");
+			sendTweet.mockResolvedValue(true);
+			expect(sendingMsg).toBeInTheDocument();
+			expect(tweetBtn).toBeInTheDocument();
 		});
 	});
 });
