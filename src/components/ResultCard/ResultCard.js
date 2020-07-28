@@ -1,8 +1,13 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import "./ResultCard.css";
 
+
 const ResultCard = (props) => {
+
+	
+
 	const setDefaultUrl = (e) => {
 		e.target.src = "/images/image-not-found.png";
 	};
@@ -36,3 +41,14 @@ const ResultCard = (props) => {
 };
 
 export default ResultCard;
+
+
+ResultCard.propTypes = {
+	first_name: PropTypes.string,
+	id: PropTypes.string,
+	image: PropTypes.string,
+	last_name: PropTypes.string,
+	party: PropTypes.string,
+	role: PropTypes.string,
+	state: PropTypes.string,
+}

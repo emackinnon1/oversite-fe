@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./Profile.css";
 import ResultCard from "../ResultCard/ResultCard";
 import { APP_URL } from "../../apiConfig";
@@ -7,6 +6,7 @@ import { getUser, getMyReps } from "../../apiCalls";
 import { UserContext } from "../App/userContext";
 
 const Profile = () => {
+
 	const [user, setUser] = useContext(UserContext);
 	const [myReps, setMyReps] = useState([]);
 
