@@ -1,6 +1,6 @@
 import React from "react";
 import App from "./App";
-import { render, fireEvent, waitFor, act } from "@testing-library/react";
+import { render, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import {
@@ -64,7 +64,6 @@ describe("App", () => {
 
 		it("should filter results", async () => {
 			const {
-				getAllByTestId,
 				getByTestId,
 				getByText,
 				getAllByText,
