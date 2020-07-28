@@ -179,5 +179,44 @@ describe("App", () => {
 			expect(sendingMsg).toBeInTheDocument();
 			expect(tweetBtn).toBeInTheDocument();
 		});
+
+		it("should let the user know when their twitter message has reached the character limit", async () => {
+			const {
+				getByAltText,
+				getAllByTestId,
+				getByTestId,
+				getByText,
+				debug,
+			} = render(
+				<MemoryRouter>
+					<UserProvider>
+						<App />
+					</UserProvider>
+				</MemoryRouter>
+			);
+
+			searchRepsByState.mockResolvedValue(mockMemberListResponse);
+			fireEvent.click(getByTestId("search-btn"));
+			const firstCard = await waitFor(() =>
+				getByText("Doug", { exact: false })
+			);
+
+			getMemberInfo.mockResolvedValue(mockSingleMemberResponse);
+			fireEvent.click(getAllByTestId("card-link")[0]);
+
+			const tweetBtn = await waitFor(() =>
+				getByText("Tweet Doug Jones", { exact: false })
+			);
+
+			const longMessage =
+				"thisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmessagethisisalongmess";
+
+			expect(tweetBtn).toBeInTheDocument();
+			fireEvent.change(getByTestId("twitter-msg"), {
+				target: { value: longMessage },
+			});
+
+			expect(getByText("Character limit reached!")).toBeInTheDocument();
+		});
 	});
 });

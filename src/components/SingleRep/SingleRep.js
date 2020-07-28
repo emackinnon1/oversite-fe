@@ -26,10 +26,6 @@ const SingleRep = (props) => {
 		return () => (mounted = false);
 	}, [props.id]);
 
-	!memberInfo.twitter_handle ||
-		console.log(280 - memberInfo.twitter_handle.length);
-	console.log(tweet.length);
-
 	return (
 		<section className="single-rep-container">
 			<h1>
