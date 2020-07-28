@@ -35,7 +35,7 @@ describe("App", () => {
 			expect(firstCard).toBeInTheDocument();
 		});
 
-		it("should filter results", async () => {
+		it("should show a single member's information upon clicking their card", async () => {
 			const { getAllByTestId, getByTestId, getByText, debug } = render(
 				<MemoryRouter>
 					<UserProvider>
@@ -51,9 +51,40 @@ describe("App", () => {
 
 			getMemberInfo.mockResolvedValue(mockSingleMemberResponse);
 			fireEvent.click(getAllByTestId("card-link")[0]);
-			const tweetBtn = await waitFor(() =>
+			const address = await waitFor(() =>
 				getByText("330 Hart Senate Office Building", { exact: false })
 			);
+
+			expect(address).toBeInTheDocument();
+		});
+
+		it("should filter results", async () => {
+			const {
+				getAllByTestId,
+				getByTestId,
+				getByText,
+				getAllByText,
+				debug,
+				queryByText,
+			} = render(
+				<MemoryRouter>
+					<UserProvider>
+						<App />
+					</UserProvider>
+				</MemoryRouter>
+			);
+
+			fireEvent.click(getByTestId("search-btn"));
+			const firstCard = await waitFor(() =>
+				getByText("Doug", { exact: false })
+			);
+
+			const democratFilterBtn = await waitFor(
+				() => getAllByText("Democrat")[1]
+			);
+			fireEvent.click(democratFilterBtn);
+
+			expect(queryByText("Richard", { exact: false })).toBeNull();
 		});
 	});
 });
