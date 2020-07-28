@@ -11,7 +11,7 @@
 
 .result-card img {
 	border:  #457b9d solid 1px;
-	width: 20%;
+	width: 25%;
 	height: auto;
 	margin-right: 2em;
 	object-fit: cover;
@@ -29,6 +29,7 @@
 
 .card-info li {
 	font-size: 1.8vw;
+
 }
 
 
@@ -37,6 +38,7 @@
 	margin-bottom: auto;
 	font-family: 'PT Serif', serif;
 	font-size: 12px;
+	
 }
 
 .rep-name {
@@ -44,11 +46,13 @@
 	font-family: 'PT Serif', serif;
 	color: #f1faee;
 	margin-bottom: .2em;
+	text-decoration: none;
 }
 .card-info ul {
 	display: inline-block;
 	list-style: none;
 	font-size: .75em;
+	text-decoration: none;
 }
 
 .search-results a {
