@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import "./SingleRep.css";
 import { getMemberInfo, sendTweet } from "../../apiCalls";
-import Collapsible from "../Collapsible/Collapsible";
 import { APP_URL } from "../../apiConfig";
+
+import ContentLoader from 'react-content-loader'
 
 const SingleRep = (props) => {
 	const [memberInfo, setMemberInfo] = useState({});
 	const [tweet, setTweet] = useState("");
-	const [isLoading, setIsLoading] = useState(false);
+	const [isSending, setIsSending] = useState(false);
+	const [isLoading, setIsLoading] = useState(true)
 	const [messageSuccess, setMessageSucces] = useState(false);
+	console.log("Member info", memberInfo)
+	const Loading = () => <ContentLoader />
 
 	useEffect(() => {
 		let mounted = true;
 		const getData = async (url, id) => {
 			const member = await getMemberInfo(url, id);
 			setMemberInfo(member[0]);
+			setIsLoading(false)
 		};
 		if (mounted) {
 			getData(APP_URL, props.id);
@@ -23,13 +28,15 @@ const SingleRep = (props) => {
 	}, [props.id]);
 
 
-	return (
+	return ( 
 		<section className="single-rep-container">
 			<h1>
 				{memberInfo.first_name} {memberInfo.last_name}
 			</h1>
+			{isLoading ? <Loading style={{textAlign: "center"}}/> :
 			<div className="profile-container">
 				<div className="bio-container">
+					
 					<img
 						className="rep-img"
 						src={memberInfo.image}
@@ -92,7 +99,7 @@ const SingleRep = (props) => {
 				<form
 					className="message-form"
 					onSubmit={async (e) => {
-						setIsLoading(true);
+						setIsSending(true);
 						setMessageSucces(
 							await sendTweet(APP_URL, tweet, memberInfo.twitter_handle, e)
 						);
@@ -112,14 +119,17 @@ const SingleRep = (props) => {
 							width: "65%",
 							padding: ".8em"
 						}}></textarea>
-					<button type="submit" disable={isLoading && "disabled"}>
-						{(isLoading && !messageSuccess && "Sending...") ||
+					<button type="submit" disable={isSending && "disabled"}>
+						{(isSending && !messageSuccess && "Sending...") ||
 							`Tweet ${memberInfo.first_name} ${memberInfo.last_name}`}
 					</button>
 				</form>
+			
 			</div>
+			}	
 		</section>
 	);
+					
 };
 
 export default SingleRep;
