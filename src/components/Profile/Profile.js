@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./Profile.css";
 import ResultCard from "../ResultCard/ResultCard";
 import { APP_URL } from "../../apiConfig";
@@ -9,6 +8,7 @@ import { UserContext } from "../App/userContext";
 const Profile = () => {
 	const [user, setUser] = useContext(UserContext);
 	const [myReps, setMyReps] = useState([]);
+
 
 	useEffect(() => {
 		let mounted = true;
@@ -62,13 +62,13 @@ const Profile = () => {
 				<div className="contact">
 					<p>{user.email}</p>
 					<p>
-						{user.street_address}, {user.state}, {user.zip}
+						{user.street_address} {user.state} {user.zip}
 					</p>
 					<p>District {user.district}</p>
 				</div>
 				<h2>My Representatives</h2>
 			</div>
-			<div className="my-reps">{makeCards(myReps)}</div>
+			<div className="my-reps">{makeCards(myReps)}</div>	
 		</div>
 	);
 };
