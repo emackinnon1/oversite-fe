@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# OverSite
 
-## Available Scripts
+## Team Members:
 
-In the project directory, you can run:
+[Steve Meyers GitHub](https://github.com/smg289)
 
-### `npm start`
+[Raymond Nguyen GitHub](https://github.com/itemniner)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Jenny Klich GitHub](https://github.com/jklich151)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Elliot Mackinnon GitHub](https://github.com/emackinnon1)
 
-### `npm test`
+[Taras Tarlov GitHub](https://github.com/ttarlov)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Abstract
 
-### `npm run build`
+**Technologies Used:**
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+***Front End:***
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+React.js, React Router, React Hooks, Cypress, Heroku, Circle CI  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+***Back End:**
 
-### `npm run eject`
+Python on Flask, SQLAlchamy, Travis CI, Heroku, Pytest, Nightmare.js (Express/Node microservice), Postgres DB
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+OverSite was our final cross pollination project at [Turing School of Software and Design](http://turing.io). The goal for this project was to build a full stack application from ideation to production in just 14 days. The emphasis was on was on creating a professional agile workflow with a combination of front-end and back-end developers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Challenges:**
 
-## Learn More
+The main challenge of this project was connecting a front end and backend into a working deployed production application while implementing continues integration with testing. On the back-end, challenges included build a REST API using an entirely new language and framework. On the front end using Cypress with CI was a challenge that we hope to continue working on in future iterations.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Setup
+1. clone down this repo and [back-end repo](https://github.com/SMJ289/oversite-be), follow directions on back-end repo readme for setup instructions.   
+2. `cd` into the new directory
+3. run `npm install`
+4. run `npm start`
+5. Open prompted localhost in your favorite browser (Chrome preferably)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Animation 
 
-### Code Splitting
+![](https://user-images.githubusercontent.com/53014933/88850381-8720b500-d1a8-11ea-82ee-b8c905c30958.gif)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Screen Shots
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+![](https://user-images.githubusercontent.com/53014933/88851017-64db6700-d1a9-11ea-8545-ae9a83347569.png)
 
-### Making a Progressive Web App
+![](https://user-images.githubusercontent.com/53014933/88851076-7e7cae80-d1a9-11ea-9b8e-c8ccd2acc7d0.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+![](https://user-images.githubusercontent.com/53014933/88851185-a2d88b00-d1a9-11ea-8557-cb3dd73a406a.png)
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
