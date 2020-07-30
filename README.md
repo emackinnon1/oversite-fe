@@ -2,7 +2,7 @@
 
 ## Team Members:
 
-[Steve Meyers GitHub](https://github.com/smg289)
+[Steve Meyers GitHub](https://github.com/smj289)
 
 [Raymond Nguyen GitHub](https://github.com/itemniner)
 
@@ -24,11 +24,11 @@ The core mission of OverSite is to amalgamate civic information into one easy to
 
 **Technologies Used:**
 
-***Front End:***
+**Front End:**
 
 React.js, React Router, React Hooks, Cypress, Heroku, Circle CI  
 
-***Back End:**
+**Back End:**
 
 Python on Flask, SQLAlchamy, Travis CI, Heroku, Pytest, Nightmare.js (Express/Node microservice), Postgres DB
 
@@ -45,11 +45,11 @@ The main challenge of this project was connecting a front end and backend into a
 
 
 ## Setup
-1. clone down this repo and [back-end repo](https://github.com/SMJ289/oversite-be), follow directions on back-end repo readme for setup instructions.   
+1. Clone down this repo and [back-end repo](https://github.com/SMJ289/oversite-be), follow directions on back-end repo readme for setup instructions.   
 2. `cd` into the new directory
-3. run `npm install`
-4. run `npm start`
-5. Open prompted localhost in your favorite browser (Chrome preferably)
+3. Run `npm install`
+4. Run `npm start`
+5. When prompted, open localhost in your favorite browser (Chrome preferably)
 
 ## Animation 
 
