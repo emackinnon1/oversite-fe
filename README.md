@@ -12,7 +12,7 @@
 
 [Taras Tarlov GitHub](https://github.com/ttarlov)
 
-## Abstract
+## Overview
 
 **Technologies Used:**
 
