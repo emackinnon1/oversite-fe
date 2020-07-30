@@ -2,7 +2,7 @@
 
 ## Team Members:
 
-[Steve Meyers GitHub](https://github.com/smg289)
+[Steve Meyers GitHub](https://github.com/smj289)
 
 [Raymond Nguyen GitHub](https://github.com/itemniner)
 
@@ -37,7 +37,7 @@ The main challenge of this project was connecting a front-end and back-end into 
 2. `cd` into the new directory
 3. Run `npm install`
 4. Run `npm start`
-5. Open prompted localhost in your favorite browser (Chrome preferably)
+5. When prompted, open localhost in your favorite browser (Chrome preferably)
 
 ## Animation 
 
