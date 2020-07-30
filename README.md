@@ -1,4 +1,4 @@
-# OverSite-Frontend
+<img width=“405” alt=“Screen Shot 2020-07-29 at 2 04 17 PM” src=“https://user-images.githubusercontent.com/49219371/88853381-7e2de480-d1a4-11ea-8700-8d7cf59b8c26.png”>
 
 ## Team Members:
 
@@ -14,6 +14,14 @@
 
 ## Overview
 
+OverSite was our final cross pollination project at [Turing School of Software and Design](http://turing.io). The goal for this project was to build a full stack application from ideation to production in just 14 days. The emphasis was on was on creating a professional agile workflow with a combination of front-end and back-end developers.
+
+
+The core mission of OverSite is to amalgamate civic information into one easy to use application that allows the user to easily find Senator and Representative contact information, and Tweet at them directly through the app. Currently the user can search by state and access their local district level representatives throught their profile. 
+
+[Live Site](https://oversite-app.herokuapp.com/)
+
+
 **Technologies Used:**
 
 **Front End:**
@@ -24,13 +32,17 @@ React.js, React Router, React Hooks, Cypress, Heroku, Circle CI
 
 Python on Flask, SQLAlchamy, Travis CI, Heroku, Pytest, Nightmare.js (Express/Node microservice), Postgres DB
 
-
-OverSite was our final cross pollination project at [Turing School of Software and Design](http://turing.io). The goal for this project was to build a full stack application from ideation to production in just 14 days. The emphasis was on creating a professional agile workflow with a combination of front-end and back-end developers.
-
-
 **Challenges:**
 
-The main challenge of this project was connecting a front-end and back-end into a working deployed production application while implementing continuous integration with testing. On the back-end, challenges included building a REST API using an entirely new language and framework. On the front-end using Cypress with CI was a challenge that we hope to continue working on in future iterations.  
+The main challenge of this project was connecting a front end and backend into a working deployed production application while implementing continues integration with testing. On the back-end, challenges included build a REST API using an entirely new language and framework. On the front end using Cypress with CI was a challenge that we hope to continue working on in future iterations.  
+
+**Future Iterations**
+
+1. Ability to search for representatives by name, district, and other parameters.
+2. Log-in with Google OAuth. 
+3. Other means of messaging representative via Sendgrid. 
+4. "In The News" feature that will show the most recent news article using Google API for the chosen representative.    
+
 
 ## Setup
 1. Clone down this repo and [back-end repo](https://github.com/SMJ289/oversite-be), follow directions on back-end repo readme for setup instructions.   
